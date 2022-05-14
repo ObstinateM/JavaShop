@@ -68,6 +68,23 @@ public class Shop {
         return this.employeeList;
     }
 
+    public String getAllArticlesAsString() {
+        String result = "Ordinateurs :\n";
+        for (Computer computer : computerList) {
+            result += "    " + computer.getName() + "\n";
+        }
+
+        result += "\nClaviers :\n";
+        for (Keyboard keyboard : keyboardList) {
+            result += "    " + keyboard.getName() + "\n";
+        }
+
+        result += "\nEcrans :\n";
+        for (Screen screen : screenList) {
+            result += "    " + screen.getName() + "\n";
+        }
+    }
+          
     public String getAllEmployeeAsString() {
         String result = "";
         for (Employee e : employeeList) {
