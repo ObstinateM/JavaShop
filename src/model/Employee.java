@@ -8,9 +8,11 @@ public class Employee extends Person {
     private Status status;
     private int salary;
     private double timeWorked;
+    private int id;
 
-    public Employee(String firstName, String lastName, String dob, int sex) {
+    public Employee(String firstName, String lastName, String dob, int sex, int id) {
         super(firstName, lastName, dob, sex);
+        this.id = id;
     }
 
     public Status getStatus() {
@@ -35,5 +37,15 @@ public class Employee extends Person {
 
     public void setTimeWorked(double timeWorked) {
         this.timeWorked = timeWorked;
+    }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
     }
 }

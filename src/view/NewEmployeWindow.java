@@ -24,8 +24,8 @@ public class NewEmployeWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(500, 500, 500, 400);
-        setResizable(false);
+        setBounds(500, 500, 500, 600);
+
         setVisible(true);
         // label
         JLabel labelFirstName = new JLabel("Prénom :");
@@ -58,16 +58,30 @@ public class NewEmployeWindow extends JFrame {
         dob.setBounds(100, 240, 300, 25);
         p.add(dob);
         // button
-        JButton btnewShop = new JButton("Valider");
-        btnewShop.setBounds(100, 400, 300, 25);
-        btnewShop.addActionListener(new ActionListener() {
+        JButton btnNewEmploye = new JButton("Valider");
+        btnNewEmploye.setBounds(100, 400, 300, 25);
+        btnNewEmploye.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                dispose();
-                new MainInterface(s);
+                if (tfFirstName.getText().isEmpty() || tfLastName.getText().isEmpty()
+                        || dob.getText().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
+                } else {
+                    int sexNumber = jComboBox.getSelectedIndex();
+                    int min = 100;
+                    int max = 999;
+                    int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
+                    Employee employee = new Employee(tfFirstName.getText(), tfLastName.getText(), dob.getText(),
+                            sexNumber, id);
+                    s.getEmployeeList().add(employee);
+                    JOptionPane.showMessageDialog(null, "Employé ajouté");
+                    dispose();
+                    new MainInterface(s);
+                }
+
             }
         });
 
-        p.add(btnewShop);
+        p.add(btnNewEmploye);
 
     }
 }
