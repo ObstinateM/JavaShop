@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class Employee extends Person {
@@ -8,7 +9,7 @@ public class Employee extends Person {
     private int salary;
     private double timeWorked;
 
-    public Employee(String firstName, String lastName, Date dob, int sex) {
+    public Employee(String firstName, String lastName, String dob, int sex) {
         super(firstName, lastName, dob, sex);
     }
 
