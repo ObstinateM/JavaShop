@@ -18,6 +18,7 @@ import javax.swing.*;
 import javax.swing.text.StyledEditorKit.BoldAction;
 import model.*;
 import controller.*;
+import view.*;
 
 public class MainInterface extends JFrame {
 
@@ -101,6 +102,16 @@ public class MainInterface extends JFrame {
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setBounds(10, 36, 338, 250);
         middlePane.add(scrollPane);
+
+        JButton btnNewArticle = new JButton("Ajouter un article");
+        btnNewArticle.setBounds(50, 300, 250, 29);
+        btnNewArticle.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                new NewArticle(s);
+            }
+        });
+        middlePane.add(btnNewArticle);
 
         JLabel labelProfit = new JLabel("Total profit: 5000$");
         labelProfit.setBounds(10, 114, 338, 14);
