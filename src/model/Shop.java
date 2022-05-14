@@ -83,12 +83,14 @@ public class Shop {
         for (Screen screen : screenList) {
             result += "    " + screen.getName() + "\n";
         }
+        return result;
     }
-          
+
     public String getAllEmployeeAsString() {
         String result = "";
         for (Employee e : employeeList) {
-            result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : " + e.getId() + "\n";
+            result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : "
+                    + e.getId() + "\n";
         }
         return result;
     }
