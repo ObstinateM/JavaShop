@@ -1,10 +1,6 @@
 package view;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.text.StyledEditorKit.BoldAction;
-
 import controller.*;
 import model.*;
 

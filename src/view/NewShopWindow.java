@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import controller.*;
 
@@ -64,22 +63,7 @@ public class NewShopWindow extends JFrame {
         btnValider.setBounds(199, 280, 100, 25);
         p.add(btnValider);
 
-        btnValider.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                if (tfNameShop.getText().isEmpty() || tfAddress.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs",
-                            "Empty fied", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    NewShop ns = new NewShop(tfNameShop, tfPassword, tfAddress);
-                    dispose();
-                    new LoginExist(ns.getShop());
-
-                }
-            }
-        });
-
+        btnValider
+                .addActionListener(new NewShopController(this, tfNameShop, tfPassword, tfAddress));
     }
-
 }
