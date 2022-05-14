@@ -17,7 +17,7 @@ public class NewEmployeWindow extends JFrame {
     private JTextField tfLastName;
     private JTextField dob;
 
-    String[] optionsToChoose = { "Homme", "Femme" };
+    String[] optionsToChoose = {"Homme", "Femme"};
 
     public NewEmployeWindow(Shop s) {
         setTitle("Ajouter un employé");
@@ -60,27 +60,8 @@ public class NewEmployeWindow extends JFrame {
         // button
         JButton btnNewEmploye = new JButton("Valider");
         btnNewEmploye.setBounds(100, 400, 300, 25);
-        btnNewEmploye.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (tfFirstName.getText().isEmpty() || tfLastName.getText().isEmpty()
-                        || dob.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
-                } else {
-                    int sexNumber = jComboBox.getSelectedIndex();
-                    int min = 100;
-                    int max = 999;
-                    int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
-                    Employee employee = new Employee(tfFirstName.getText(), tfLastName.getText(), dob.getText(),
-                            sexNumber, id);
-                    s.getEmployeeList().add(employee);
-                    JOptionPane.showMessageDialog(null, "Employé ajouté");
-                    dispose();
-                    new MainInterface(s);
-                }
-
-            }
-        });
-
+        btnNewEmploye.addActionListener(
+                new NewEmployeeController(this, s, tfFirstName, tfLastName, dob, jComboBox));
         p.add(btnNewEmploye);
 
     }
