@@ -7,10 +7,10 @@ public class Person {
     private int id;
     private String firstName;
     private String lastName;
-    private Date dob;
+    private String dob;
     private int sex;
 
-    public Person(String firstName, String lastName, Date dob, int sex) {
+    public Person(String firstName, String lastName, String dob, int sex) {
         // TODO: Randomly put a id
         this.id = 1;
         this.firstName = firstName;
@@ -43,11 +43,11 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 

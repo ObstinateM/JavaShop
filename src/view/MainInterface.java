@@ -56,10 +56,20 @@ public class MainInterface extends JFrame {
         titleOrder.setFont(new Font("Tahoma", Font.PLAIN, 13));
         titleOrder.setBounds(45, 11, 71, 14);
         orderPane.add(titleOrder);
+        // employee
+        JButton btnEmployee = new JButton("Ajouter un Employé");
+        btnEmployee.setBounds(10, 36, 150, 23);
+        orderPane.add(btnEmployee);
 
         JPanel employeePane = new JPanel();
         employeePane.setBounds(531, 53, 183, 403);
         p.add(employeePane);
+        employeePane.setLayout(null);
+        btnEmployee.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new NewEmployeWindow(s);
+            }
+        });
 
         JLabel titleEmployee = new JLabel("Employ\u00E9s");
         titleEmployee.setFont(new Font("Tahoma", Font.PLAIN, 13));
@@ -72,6 +82,7 @@ public class MainInterface extends JFrame {
                 new String[] { "Status", "Id" }));
         employeePane.add(tableEmployee);
 
+        // MIDDLE
         JPanel middlePane = new JPanel();
         middlePane.setBounds(174, 53, 358, 403);
         p.add(middlePane);

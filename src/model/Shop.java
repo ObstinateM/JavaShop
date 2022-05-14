@@ -35,4 +35,7 @@ public class Shop {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public void addEmployee(Employee employee) {
+    }
 }
