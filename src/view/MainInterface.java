@@ -88,16 +88,19 @@ public class MainInterface extends JFrame {
         p.add(middlePane);
         middlePane.setLayout(null);
 
-        JLabel titleRestock = new JLabel("Articles n\u00E9cessitant un restock");
+        JLabel titleRestock = new JLabel("Articles que nous vendons");
         titleRestock.setFont(new Font("Tahoma", Font.PLAIN, 13));
         titleRestock.setBounds(93, 11, 173, 14);
         middlePane.add(titleRestock);
 
         JTextPane textAreaRestock = new JTextPane();
         textAreaRestock.setEditable(false);
-        textAreaRestock.setText("- De l'eau\r\n- Du feu\r\n- wtv\r\n");
-        textAreaRestock.setBounds(10, 36, 338, 52);
-        middlePane.add(textAreaRestock);
+        textAreaRestock.setText(s.getAllArticlesAsString());
+
+        JScrollPane scrollPane = new JScrollPane(textAreaRestock);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setBounds(10, 36, 338, 250);
+        middlePane.add(scrollPane);
 
         JLabel labelProfit = new JLabel("Total profit: 5000$");
         labelProfit.setBounds(10, 114, 338, 14);
