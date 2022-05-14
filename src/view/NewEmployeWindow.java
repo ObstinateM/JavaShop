@@ -17,7 +17,7 @@ public class NewEmployeWindow extends JFrame {
     private JTextField tfLastName;
     private JTextField dob;
 
-    String[] optionsToChoose = {"Homme", "Femme"};
+    String[] optionsToChoose = { "Homme", "Femme" };
 
     public NewEmployeWindow(Shop s) {
         setTitle("Ajouter un employé");
@@ -36,16 +36,22 @@ public class NewEmployeWindow extends JFrame {
         labelLastName.setHorizontalAlignment(SwingConstants.CENTER);
         labelLastName.setBounds(100, 150, 300, 25);
         p.add(labelLastName);
-        JLabel labelDob = new JLabel("Date de naissance :");
+        JLabel labelDob = new JLabel("Date de naissance* :");
         labelDob.setHorizontalAlignment(SwingConstants.CENTER);
         labelDob.setBounds(100, 220, 300, 25);
         p.add(labelDob);
+        JLabel labelIndication = new JLabel("*Veuillez entrer votre date de naissance sous ce format : JJ/MM/AAAA");
+        labelIndication.setFont(new Font("Verdana", Font.ITALIC, 10));
+        labelIndication.setForeground(Color.RED);
+        labelIndication.setHorizontalAlignment(SwingConstants.CENTER);
+        labelIndication.setBounds(50, 260, 400, 25);
+        p.add(labelIndication);
         JLabel labelSex = new JLabel("Sexe :");
         labelSex.setHorizontalAlignment(SwingConstants.CENTER);
-        labelSex.setBounds(100, 270, 300, 25);
+        labelSex.setBounds(100, 320, 300, 25);
         p.add(labelSex);
         JComboBox<String> jComboBox = new JComboBox<>(optionsToChoose);
-        jComboBox.setBounds(100, 290, 300, 25);
+        jComboBox.setBounds(100, 350, 300, 25);
         p.add(jComboBox);
         // textfield
         tfFirstName = new JTextField();

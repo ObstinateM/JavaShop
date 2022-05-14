@@ -89,8 +89,8 @@ public class Shop {
     public String getAllEmployeeAsString() {
         String result = "";
         for (Employee e : employeeList) {
-            result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : "
-                    + e.getId() + "Sexe: " + e.getSex() + "\n";
+            result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " \nID : "
+                    + e.getId() + " Sexe: " + e.getSex() + "\n";
         }
         return result;
     }
