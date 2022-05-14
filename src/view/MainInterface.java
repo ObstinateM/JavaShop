@@ -49,16 +49,24 @@ public class MainInterface extends JFrame {
         rightSide.setBackground(Color.decode("#696969"));
         rightSide.setLayout(null);
         p.add(rightSide);
+
         JButton btnEmployee = new JButton("Ajouter un Employé");
         btnEmployee.setBounds(20, 50, 150, 20);
         btnEmployee.addActionListener(new CloseAndOpenNewEmployeeWindow(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnEmployee);
+
         JButton btnNewArticle = new JButton("Ajouter un article");
         btnNewArticle.setBounds(20, 90, 150, 20);
         btnNewArticle.addActionListener(new CloseAndOpenNewArticle(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnNewArticle);
+
+        JButton btnShowArticles = new JButton("Lister les articles");
+        btnShowArticles.setBounds(20, 130, 150, 20);
+        btnShowArticles.addActionListener(new CloseAndOpenShowKeyboard(this, s));
+        btnShowArticles.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnShowArticles);
         // FAUT GARDER
         // FAUT GARDER
         // FAUT GARDER

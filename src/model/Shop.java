@@ -94,4 +94,13 @@ public class Shop {
         }
         return result;
     }
+
+    public Keyboard getKeyboardByName(String name) {
+        for (Keyboard keyboard : keyboardList) {
+            if (keyboard.getName().equals(name)) {
+                return keyboard;
+            }
+        }
+        return null;
+    }
 }

@@ -15,19 +15,19 @@ public class Keyboard extends Article {
         this.hasKeypad = hasKeypad;
     }
 
-    public boolean getIsMechanicel() {
+    public boolean isMechanical() {
         return isMechanical;
     }
 
-    public boolean getIsRGB() {
+    public boolean isRGB() {
         return isRGB;
     }
 
-    public boolean getIsWireless() {
+    public boolean isWireless() {
         return isWireless;
     }
 
-    public boolean getHasKeypad() {
+    public boolean hasKeypad() {
         return hasKeypad;
     }
 }
