@@ -78,8 +78,8 @@ public class MainInterface extends JFrame {
         tableEmployee = new JTable();
         tableEmployee.setBorder(UIManager.getBorder("Tree.editorBorder"));
         tableEmployee.setModel(new DefaultTableModel(
-                new Object[][] { { "1", "Working" }, { "2", "Pause" }, { "3", "Finished" }, },
-                new String[] { "Status", "Id" }));
+                new Object[][] {{"1", "Working"}, {"2", "Pause"}, {"3", "Finished"},},
+                new String[] {"Status", "Id"}));
         employeePane.add(tableEmployee);
 
         // MIDDLE
@@ -94,6 +94,7 @@ public class MainInterface extends JFrame {
         middlePane.add(titleRestock);
 
         JTextPane textAreaRestock = new JTextPane();
+        textAreaRestock.setEditable(false);
         textAreaRestock.setText("- De l'eau\r\n- Du feu\r\n- wtv\r\n");
         textAreaRestock.setBounds(10, 36, 338, 52);
         middlePane.add(textAreaRestock);
