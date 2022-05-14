@@ -1,15 +1,31 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Shop {
 
-    public String address;
-    public String name;
-    public String password;
+    private String address;
+    private String name;
+    private String password;
+    private ArrayList<Computer> computerList = new ArrayList<Computer>();
+    private ArrayList<Keyboard> keyboardList = new ArrayList<Keyboard>();
+    private ArrayList<Screen> screenList = new ArrayList<Screen>();
+    private ArrayList<Employee> employeeList = new ArrayList<Employee>();
 
     public Shop(String name, String password, String address) {
         this.address = address;
         this.name = name;
         this.password = password;
+
+        // Hard coded data
+        computerList.add(new Computer(0, "MacBook Pro", 2999.99, 10, 0, "Intel Core i7", 16, 512));
+        computerList.add(new Computer(1, "MacBook Air", 1999.99, 10, 0, "Intel Core i5", 8, 256));
+
+        keyboardList.add(new Keyboard(0, "Logitech G502", 99.99, 10, 0, true, true, true, true));
+        keyboardList.add(new Keyboard(1, "Logitech G666", 66.6, 10, 0, true, true, false, false));
+
+        screenList.add(new Screen(0, "LG OLED", 299.99, 10, 0, 15, 17, 60, 200));
+        screenList.add(new Screen(1, "Samsung OLED", 399.99, 10, 0, 15, 19, 144, 200));
     }
 
     public String getAddress() {
@@ -34,5 +50,21 @@ public class Shop {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public ArrayList<Computer> getComputerList() {
+        return this.computerList;
+    }
+
+    public ArrayList<Keyboard> getKeyboardList() {
+        return this.keyboardList;
+    }
+
+    public ArrayList<Screen> getScreenList() {
+        return this.screenList;
+    }
+
+    public ArrayList<Employee> getEmployeeList() {
+        return this.employeeList;
     }
 }

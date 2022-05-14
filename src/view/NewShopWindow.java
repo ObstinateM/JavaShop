@@ -24,8 +24,7 @@ public class NewShopWindow extends JFrame {
         setResizable(false);
         setVisible(true);
         // label
-        JLabel labelWelcome1 = new JLabel(
-                "Pour commencer veuillez remplir les champs suivants : ");
+        JLabel labelWelcome1 = new JLabel("Pour commencer veuillez remplir les champs suivants : ");
         labelWelcome1.setHorizontalAlignment(SwingConstants.CENTER);
         labelWelcome1.setFont(new Font("Verdana", Font.PLAIN, 18));
 
@@ -64,13 +63,14 @@ public class NewShopWindow extends JFrame {
         JButton btnValider = new JButton("Valider");
         btnValider.setBounds(199, 280, 100, 25);
         p.add(btnValider);
+
         btnValider.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
                 if (tfNameShop.getText().isEmpty() || tfAddress.getText().isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs", "Empty fied",
-                            JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs",
+                            "Empty fied", JOptionPane.ERROR_MESSAGE);
                 } else {
                     NewShop ns = new NewShop(tfNameShop, tfPassword, tfAddress);
                     dispose();
