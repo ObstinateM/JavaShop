@@ -15,7 +15,8 @@ public class NewShop {
             JOptionPane.showMessageDialog(a, "Nom incorrect", "Empty Field", 2);
         } else {
 
-            shop = new Shop(tfShopName.getText(), new String(tfPassword.getPassword()), tfAddress.getText());
+            shop = new Shop(tfShopName.getText(), new String(tfPassword.getPassword()),
+                    tfAddress.getText());
             if (!tfAddress.getText().isEmpty()) {
                 shop.setAddress(tfAddress.getText());
             }
