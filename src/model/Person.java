@@ -1,7 +1,5 @@
 package model;
 
-import java.util.*;
-
 public class Person {
 
     private int id;
@@ -11,7 +9,6 @@ public class Person {
     private int sex;
 
     public Person(String firstName, String lastName, String dob, int sex) {
-        // TODO: Randomly put a id
         this.id = 1;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -24,8 +24,11 @@ public class LoginController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        System.out.println(tfPassword.getPassword());
+        System.out.println(shop.getPassword());
+
         if (tfNameShop.getText().equals(shop.getName())
-                && tfPassword.getText().equals(shop.getPassword())) {
+                && shop.getPassword().equals(new String(tfPassword.getPassword()))) {
             frame.dispose();
             new MainInterface(shop);
         } else {
