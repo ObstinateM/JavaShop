@@ -9,16 +9,15 @@ public class NewEmployee {
 
     Employee employee;
 
-    public NewEmployee(JTextField tfFirstName, JTextField tfLastName, JTextField dob, JTextField sex) {
-
+    public NewEmployee(JTextField tfFirstName, JTextField tfLastName, JTextField dob, JTextField sex, int id) {
+        System.out.println(tfFirstName.getText());
         if (tfFirstName.getText().isEmpty() || tfLastName.getText().isEmpty() || dob.getText().isEmpty()
                 || sex.getText().isEmpty()) {
 
             JOptionPane.showMessageDialog(null, "Please fill all the fields");
         } else {
             int sexNumber = sex.getText().equals("Homme") ? 1 : 2;
-
-            employee = new Employee(tfFirstName.getText(), tfLastName.getText(), dob.getText(), sexNumber);
+            employee = new Employee(tfFirstName.getText(), tfLastName.getText(), dob.getText(), sexNumber, id);
 
         }
     }
