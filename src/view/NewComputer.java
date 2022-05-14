@@ -3,7 +3,7 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import controller.CloseCurrent;
+import controller.CloseAndOpenMain;
 import controller.NewComputerController;
 import model.Shop;
 import javax.swing.JLabel;
@@ -20,7 +20,7 @@ public class NewComputer extends JFrame {
     private JTextField tfRam;
     private JTextField tfHDD;
 
-    public NewComputer(Shop s) {
+    public NewComputer(Shop shop) {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 200, 563);
@@ -89,13 +89,13 @@ public class NewComputer extends JFrame {
 
         JButton btnSubmit = new JButton("Valider");
         btnSubmit.setBounds(28, 442, 117, 29);
-        btnSubmit.addActionListener(new NewComputerController(s, this, tfName, tdPrice, tfInventory,
-                tfProc, tfRam, tfHDD));
+        btnSubmit.addActionListener(new NewComputerController(shop, this, tfName, tdPrice,
+                tfInventory, tfProc, tfRam, tfHDD));
         contentPane.add(btnSubmit);
 
         JButton btnCancel = new JButton("Annuler");
         btnCancel.setBounds(28, 475, 117, 29);
-        btnCancel.addActionListener(new CloseCurrent(this));
+        btnCancel.addActionListener(new CloseAndOpenMain(this, shop));
         contentPane.add(btnCancel);
     }
 }

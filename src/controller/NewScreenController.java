@@ -51,6 +51,7 @@ public class NewScreenController implements ActionListener {
                     0, Integer.parseInt(tfWidth.getText()), Integer.parseInt(tfHeight.getText()),
                     Integer.parseInt(tfRefreshRate.getText()),
                     Integer.parseInt(tfResponseTime.getText())));
+            JOptionPane.showMessageDialog(null, "Ecran ajouté");
             frame.dispose();
             new MainInterface(shop);
         }

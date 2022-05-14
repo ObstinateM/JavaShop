@@ -3,6 +3,7 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import controller.CloseAndOpenMain;
 import controller.NewScreenController;
 import model.Shop;
 import javax.swing.JLabel;
@@ -104,6 +105,7 @@ public class NewScreen extends JFrame {
 
         JButton btnCancel = new JButton("Annuler");
         btnCancel.setBounds(43, 530, 117, 29);
+        btnCancel.addActionListener(new CloseAndOpenMain(this, shop));
         contentPane.add(btnCancel);
     }
 

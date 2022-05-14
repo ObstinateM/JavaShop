@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.CloseAndOpenNewComputer;
+import controller.CloseAndOpenNewKeyboard;
 import controller.CloseAndOpenNewScreen;
 import model.Shop;
 import javax.swing.JLabel;
@@ -37,6 +38,7 @@ public class NewArticle extends JFrame {
 
         JButton btnAddKeyboard = new JButton("Claviers");
         btnAddKeyboard.setBounds(311, 96, 117, 29);
+        btnAddKeyboard.addActionListener(new CloseAndOpenNewKeyboard(this, s));
         contentPane.add(btnAddKeyboard);
     }
 }
