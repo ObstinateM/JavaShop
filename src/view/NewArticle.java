@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.CloseAndOpenNewComputer;
+import controller.CloseAndOpenNewScreen;
 import model.Shop;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -31,6 +32,7 @@ public class NewArticle extends JFrame {
 
         JButton btnAddScreen = new JButton("Ecrans");
         btnAddScreen.setBounds(167, 96, 117, 29);
+        btnAddScreen.addActionListener(new CloseAndOpenNewScreen(this, s));
         contentPane.add(btnAddScreen);
 
         JButton btnAddKeyboard = new JButton("Claviers");

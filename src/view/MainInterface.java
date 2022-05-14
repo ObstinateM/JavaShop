@@ -4,10 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
 import model.*;
 import controller.*;
-import view.*;
 
 public class MainInterface extends JFrame {
 
@@ -108,7 +106,8 @@ public class MainInterface extends JFrame {
         textAreaStatusEmploye.setText(s.getAllEmployeeAsString());
         middle.add(textAreaStatusEmploye);
         JScrollPane scrollPaneStatus = new JScrollPane(textAreaStatusEmploye);
-        scrollPaneStatus.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPaneStatus
+                .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPaneStatus.setBounds(15, 50, 200, 300);
         scrollPaneStatus.setBorder(lineborder);
         middle.add(scrollPaneStatus);
