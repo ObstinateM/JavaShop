@@ -1,21 +1,14 @@
 package view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.CloseCurrent;
 import controller.NewComputerController;
-import model.Computer;
 import model.Shop;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import utils.utils;
 
 public class NewComputer extends JFrame {
 

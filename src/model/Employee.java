@@ -1,8 +1,5 @@
 package model;
 
-import java.time.LocalDate;
-import java.util.*;
-
 public class Employee extends Person {
 
     private Status status;
