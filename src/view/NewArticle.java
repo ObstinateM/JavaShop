@@ -1,10 +1,9 @@
 package view;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import controller.CloseAndOpenNewComputer;
 import model.Shop;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -27,12 +26,7 @@ public class NewArticle extends JFrame {
 
         JButton btnAddComputer = new JButton("Ordinateurs");
         btnAddComputer.setBounds(17, 96, 117, 29);
-        btnAddComputer.addActionListener((ActionListener) new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                new NewComputer(s);
-            }
-        });
+        btnAddComputer.addActionListener(new CloseAndOpenNewComputer(this, s));
         contentPane.add(btnAddComputer);
 
         JButton btnAddScreen = new JButton("Ecrans");

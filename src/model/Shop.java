@@ -90,7 +90,7 @@ public class Shop {
         String result = "";
         for (Employee e : employeeList) {
             result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : "
-                    + e.getId() + "\n";
+                    + e.getId() + "Sexe: " + e.getSex() + "\n";
         }
         return result;
     }

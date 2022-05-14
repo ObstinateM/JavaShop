@@ -56,12 +56,7 @@ public class MainInterface extends JFrame {
         employeePane.setBounds(0, 400, 600, 200);
         p.add(employeePane);
         employeePane.setLayout(null);
-        btnEmployee.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                new NewEmployeWindow(s);
-            }
-        });
+        btnEmployee.addActionListener(new CloseAndOpenNewEmployeeWindow(this, s));
         JLabel listEmployee = new JLabel("Liste des employés");
         listEmployee.setFont(new Font("Tahoma", Font.PLAIN, 13));
         listEmployee.setBounds(0, 0, 150, 14);
@@ -94,12 +89,7 @@ public class MainInterface extends JFrame {
 
         JButton btnNewArticle = new JButton("Ajouter un article");
         btnNewArticle.setBounds(50, 300, 250, 29);
-        btnNewArticle.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                new NewArticle(s);
-            }
-        });
+        btnNewArticle.addActionListener(new CloseAndOpenNewArticle(this, s));
         middlePane.add(btnNewArticle);
 
         JLabel labelProfit = new JLabel("Total profit: 5000$");
