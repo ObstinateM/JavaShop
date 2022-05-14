@@ -1,8 +1,9 @@
 package view;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import controller.LoginController;
+import controller.OpenResetPassword;
 import model.*;
 
 public class LoginExist extends JFrame {
@@ -22,8 +23,7 @@ public class LoginExist extends JFrame {
         setResizable(false);
         setVisible(true);
         // label
-        JLabel labelWelcome1 = new JLabel(
-                "Bienvenue dans votre gestionnaire de magasin ! ");
+        JLabel labelWelcome1 = new JLabel("Bienvenue dans votre gestionnaire de magasin ! ");
         labelWelcome1.setHorizontalAlignment(SwingConstants.CENTER);
         labelWelcome1.setFont(new Font("Verdana", Font.PLAIN, 18));
 
@@ -53,30 +53,11 @@ public class LoginExist extends JFrame {
         // button
         JButton btnLogin = new JButton("Se connecter");
         btnLogin.setBounds(100, 250, 300, 25);
-        btnLogin.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (tfNameShop.getText().equals(s.getName())
-                        && tfPassword.getText().equals(s.getPassword())) {
-                    dispose();
-                    new MainInterface(s);
-
-                } else {
-                    JOptionPane.showMessageDialog(null,
-                            "Votre nom de magasin ou votre mot de passe est incorrect",
-                            "Erreur", JOptionPane.ERROR_MESSAGE);
-                }
-
-            }
-        });
+        btnLogin.addActionListener(new LoginController(this, s, tfNameShop, tfPassword));
         JButton btnReset = new JButton("Réinitialiser le mot de passe");
         btnReset.setBounds(100, 300, 300, 25);
-        btnReset.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new ResetPassword(s);
-            }
-        });
+        btnReset.addActionListener(new OpenResetPassword(s));
         p.add(btnReset);
         p.add(btnLogin);
-
     }
 }

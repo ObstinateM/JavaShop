@@ -5,7 +5,6 @@ import model.Shop;
 import view.MainInterface;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -40,8 +39,11 @@ public class NewComputerController implements ActionListener {
             JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs", "Empty fied",
                     JOptionPane.ERROR_MESSAGE);
         } else {
+            int min = 100;
+            int max = 999;
+            int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
             shop.getComputerList()
-                    .add(new Computer(1, tfName.getText(), Double.parseDouble(tdPrice.getText()),
+                    .add(new Computer(id, tfName.getText(), Double.parseDouble(tdPrice.getText()),
                             Integer.parseInt(tfInventory.getText()), 0, tfProc.getText(),
                             Integer.parseInt(tfRam.getText()), Integer.parseInt(tfHDD.getText())));
             frame.dispose();

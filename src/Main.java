@@ -1,5 +1,5 @@
+import model.Shop;
 import view.*;
-import model.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -11,6 +11,6 @@ public class Main {
         // login.setSize(500, 500);
         // login.setVisible(true);
         Shop shop = new Shop("test", "password", "address");
-        MainInterface mainInterface = new MainInterface(shop);
+        new MainInterface(shop);
     }
 }

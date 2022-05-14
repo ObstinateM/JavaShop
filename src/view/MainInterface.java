@@ -1,14 +1,10 @@
 package view;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-
 import model.*;
 import controller.*;
-import view.*;
-
 
 public class MainInterface extends JFrame {
 
