@@ -1,24 +1,14 @@
 package view;
 
 import java.awt.*;
-import javax.swing.*;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.GridLayout;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
-import java.awt.Font;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.UIManager;
-import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.text.StyledEditorKit.BoldAction;
+import javax.swing.border.EmptyBorder;
+
 import model.*;
 import controller.*;
 import view.*;
+
 
 public class MainInterface extends JFrame {
 
@@ -33,7 +23,7 @@ public class MainInterface extends JFrame {
         p.setBorder(new EmptyBorder(5, 5, 5, 5));
         p.setLayout(null);
         setContentPane(p);
-        setResizable(false);
+
         setVisible(true);
         JPanel headerPane = new JPanel();
         headerPane.setBounds(5, 5, 709, 49);
@@ -63,26 +53,25 @@ public class MainInterface extends JFrame {
         orderPane.add(btnEmployee);
 
         JPanel employeePane = new JPanel();
-        employeePane.setBounds(531, 53, 183, 403);
+        employeePane.setBounds(0, 400, 600, 200);
         p.add(employeePane);
         employeePane.setLayout(null);
         btnEmployee.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                dispose();
                 new NewEmployeWindow(s);
             }
         });
+        JLabel listEmployee = new JLabel("Liste des employés");
+        listEmployee.setFont(new Font("Tahoma", Font.PLAIN, 13));
+        listEmployee.setBounds(0, 0, 150, 14);
+        employeePane.add(listEmployee);
 
-        JLabel titleEmployee = new JLabel("Employ\u00E9s");
-        titleEmployee.setFont(new Font("Tahoma", Font.PLAIN, 13));
-        employeePane.add(titleEmployee);
-
-        tableEmployee = new JTable();
-        tableEmployee.setBorder(UIManager.getBorder("Tree.editorBorder"));
-        tableEmployee.setModel(new DefaultTableModel(
-                new Object[][] {{"1", "Working"}, {"2", "Pause"}, {"3", "Finished"},},
-                new String[] {"Status", "Id"}));
-        employeePane.add(tableEmployee);
-
+        JTextPane textAreaEmployee = new JTextPane();
+        textAreaEmployee.setEditable(false);
+        textAreaEmployee.setText(s.getAllEmployeeAsString());
+        textAreaEmployee.setBounds(0, 0, 300, 200);
+        employeePane.add(textAreaEmployee);
         // MIDDLE
         JPanel middlePane = new JPanel();
         middlePane.setBounds(174, 53, 358, 403);
