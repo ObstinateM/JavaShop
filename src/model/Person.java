@@ -6,9 +6,9 @@ public class Person {
     private String firstName;
     private String lastName;
     private String dob;
-    private int sex;
+    private String sex;
 
-    public Person(String firstName, String lastName, String dob, int sex) {
+    public Person(String firstName, String lastName, String dob, String sex) {
         this.id = 1;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -48,11 +48,11 @@ public class Person {
         this.dob = dob;
     }
 
-    public int getSex() {
+    public String getSex() {
         return sex;
     }
 
-    public void setSex(int sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 }

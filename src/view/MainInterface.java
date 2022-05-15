@@ -16,7 +16,7 @@ public class MainInterface extends JFrame {
     public MainInterface(Shop s) {
         setTitle("Gestion du magasin");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(500, 500, 900, 500);
+        setBounds(400, 400, 900, 500);
         p.setBorder(new EmptyBorder(5, 5, 5, 5));
         p.setLayout(null);
         setContentPane(p);
@@ -61,25 +61,25 @@ public class MainInterface extends JFrame {
         btnNewArticle.addActionListener(new CloseAndOpenNewArticle(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnNewArticle);
-
+      
         JButton btnShowArticles = new JButton("Lister les articles");
         btnShowArticles.setBounds(20, 130, 150, 20);
         btnShowArticles.addActionListener(new CloseAndOpenShowArticle(this, s));
         btnShowArticles.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnShowArticles);
-        // FAUT GARDER
-        // FAUT GARDER
-        // FAUT GARDER
-        // JPanel employeePane = new JPanel();
-        // employeePane.setBounds(0, 400, 600, 200);
-        // p.add(employeePane);
-        // employeePane.setLayout(null);
-        // btnEmployee.addActionListener(new CloseAndOpenNewEmployeeWindow(this, s));
-        // JTextPane textAreaEmployee = new JTextPane();
-        // textAreaEmployee.setEditable(false);
-        // textAreaEmployee.setText(s.getAllEmployeeAsString());
-        // textAreaEmployee.setBounds(0, 0, 300, 200);
-        // employeePane.add(textAreaEmployee);
+       
+        // button for define the status of an employee
+        JButton btnSetStatus = new JButton("Pointage d'employé");
+        btnSetStatus.setBounds(20, 130, 150, 20);
+        btnSetStatus.addActionListener(new CloseAndOpenSetEmployeeStatus(this, s));
+        btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnSetStatus);
+        // display list employ with data
+        JButton btnListEmployee = new JButton("Liste des employés");
+        btnListEmployee.setBounds(20, 170, 150, 20);
+        btnListEmployee.addActionListener(new CloseAndOpenListEmployee(this, s));
+        btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnListEmployee);
 
         // MIDLE //
         // MIDLE //
@@ -111,7 +111,7 @@ public class MainInterface extends JFrame {
         middle.add(statusEmploye);
         JTextPane textAreaStatusEmploye = new JTextPane();
         textAreaStatusEmploye.setEditable(false);
-        textAreaStatusEmploye.setText(s.getAllEmployeeAsString());
+        textAreaStatusEmploye.setText(s.getAllEmployeeStatus());
         middle.add(textAreaStatusEmploye);
         JScrollPane scrollPaneStatus = new JScrollPane(textAreaStatusEmploye);
         scrollPaneStatus

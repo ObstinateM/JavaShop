@@ -86,11 +86,21 @@ public class Shop {
         return result;
     }
 
+    public String getAllEmployeeStatus() {
+        String result = "";
+        for (Employee e : employeeList) {
+            result += "ID :" + e.getId() + " - " + e.getStatus() + "\n";
+        }
+        return result;
+    }
+
     public String getAllEmployeeAsString() {
         String result = "";
         for (Employee e : employeeList) {
-            result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " \nID : "
-                    + e.getId() + " Sexe: " + e.getSex() + "\n";
+
+            result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : "
+                    + e.getId() + " Sexe : " + e.getSex() + " Date de naissance : " + e.getDob() + " Statut : "
+                    + e.getStatus() + "\n";
         }
         return result;
     }
@@ -119,6 +129,21 @@ public class Shop {
                 return screen;
             }
         }
+        return null;
+    }
+
+    // return Employe with by lastname
+    public Employee getEmployeeByFirstName(String FirstName) {
+
+        for (Employee e : employeeList) {
+            // System.out.println("Employé rentré :" + FirstName);
+            // System.out.println("Employé choisis :" + e.getFirstName());
+            if (e.getFirstName().equals(FirstName)) {
+
+                return e;
+            }
+        }
+
         return null;
     }
 }

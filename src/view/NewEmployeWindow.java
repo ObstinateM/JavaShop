@@ -21,7 +21,7 @@ public class NewEmployeWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(500, 500, 500, 600);
+        setBounds(400, 300, 500, 600);
 
         setVisible(true);
         // label
@@ -67,5 +67,12 @@ public class NewEmployeWindow extends JFrame {
         btnNewEmploye.addActionListener(
                 new NewEmployeeController(this, s, tfFirstName, tfLastName, dob, jComboBox));
         p.add(btnNewEmploye);
+
+        // button retour
+        JButton btnBack = new JButton("Retour");
+        btnBack.setBounds(10, 500, 100, 30);
+        btnBack.setBackground(Color.decode("#C70039"));
+        btnBack.addActionListener(new CloseAndOpenMainInterface(s, this));
+        p.add(btnBack);
     }
 }
