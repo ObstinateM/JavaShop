@@ -5,9 +5,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 
-import controller.CloseAndOpenNewComputer;
-import controller.CloseAndOpenNewKeyboard;
-import controller.CloseAndOpenNewScreen;
 import model.Shop;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -33,17 +30,17 @@ public class NewOrder extends JFrame {
 
         JButton btnAddComputer = new JButton("Ordinateurs");
         btnAddComputer.setBounds(100, 80, 117, 30);
-        btnAddComputer.addActionListener(new CloseAndOpenNewComputer(this, s));
+        btnAddComputer.addActionListener(new CloseAndOpenNewOrderComputer(this, s));
         contentPane.add(btnAddComputer);
 
         JButton btnAddScreen = new JButton("Ecrans");
         btnAddScreen.setBounds(100, 180, 117, 30);
-        btnAddScreen.addActionListener(new CloseAndOpenNewScreen(this, s));
+        btnAddScreen.addActionListener(new CloseAndOpenNewOrderScreen(this, s));
         contentPane.add(btnAddScreen);
 
         JButton btnAddKeyboard = new JButton("Claviers");
         btnAddKeyboard.setBounds(100, 280, 117, 30);
-        btnAddKeyboard.addActionListener(new CloseAndOpenNewKeyboard(this, s));
+        btnAddKeyboard.addActionListener(new CloseAndOpenNewOrderKeyBoard(this, s));
         contentPane.add(btnAddKeyboard);
         // label for list artcle order
         JLabel lblListArticle = new JLabel("Liste des articles commandé");
