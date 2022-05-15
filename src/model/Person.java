@@ -8,10 +8,9 @@ public class Person {
     private String firstName;
     private String lastName;
     private String dob;
-    private int sex;
+    private String sex;
 
-    public Person(String firstName, String lastName, String dob, int sex) {
-        // TODO: Randomly put a id
+    public Person(String firstName, String lastName, String dob, String sex) {
         this.id = 1;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -51,7 +50,7 @@ public class Person {
         this.dob = dob;
     }
 
-    public int getSex() {
+    public String getSex() {
         return sex;
     }
 

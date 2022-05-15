@@ -35,13 +35,14 @@ public class NewEmployeeController implements ActionListener {
                 || dob.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
         } else {
-            int sexNumber = jComboBox.getSelectedIndex();
+            int sexNumber = jComboBox.getSelectedIndex() + 1;
+            String sexString = sexNumber == 1 ? "HOMME" : "FEMME";
             int min = 100;
             int max = 999;
             int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
 
             Employee employee = new Employee(tfFirstName.getText(), tfLastName.getText(),
-                    dob.getText(), sexNumber, id);
+                    dob.getText(), sexString, id);
             shop.getEmployeeList().add(employee);
             JOptionPane.showMessageDialog(null, "Employé ajouté");
             frame.dispose();

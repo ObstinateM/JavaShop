@@ -47,4 +47,9 @@ public class SetEmployeeStatusController implements ActionListener {
 
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // get Status of comboBox
+
+    }
 }

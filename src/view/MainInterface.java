@@ -68,21 +68,12 @@ public class MainInterface extends JFrame {
         btnSetStatus.addActionListener(new CloseAndOpenSetEmployeeStatus(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnSetStatus);
-        // new employee window
-
-        // FAUT GARDER
-        // FAUT GARDER
-        // FAUT GARDER
-        // JPanel employeePane = new JPanel();
-        // employeePane.setBounds(0, 400, 600, 200);
-        // p.add(employeePane);
-        // employeePane.setLayout(null);
-        // btnEmployee.addActionListener(new CloseAndOpenNewEmployeeWindow(this, s));
-        // JTextPane textAreaEmployee = new JTextPane();
-        // textAreaEmployee.setEditable(false);
-        // textAreaEmployee.setText(s.getAllEmployeeAsString());
-        // textAreaEmployee.setBounds(0, 0, 300, 200);
-        // employeePane.add(textAreaEmployee);
+        // display list employ with data
+        JButton btnListEmployee = new JButton("Liste des employés");
+        btnListEmployee.setBounds(20, 170, 150, 20);
+        btnListEmployee.addActionListener(new CloseAndOpenListEmployee(this, s));
+        btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnListEmployee);
 
         // MIDLE //
         // MIDLE //
