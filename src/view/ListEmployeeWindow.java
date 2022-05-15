@@ -1,9 +1,7 @@
 package view;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.text.StyledEditorKit.BoldAction;
 
 import controller.*;
 import model.Shop;
@@ -33,6 +31,7 @@ public class ListEmployeeWindow extends JFrame {
         textAreaEmployee.setText(s.getAllEmployeeAsString());
         textAreaEmployee.setBounds(0, 50, 700, 200);
         p.add(textAreaEmployee);
+
         // button retour
         JButton btnBack = new JButton("Retour");
         btnBack.setBounds(10, 300, 100, 30);

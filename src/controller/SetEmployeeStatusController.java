@@ -1,37 +1,41 @@
 package controller;
 
-import model.Computer;
 import model.Employee;
 import model.Shop;
 import view.MainInterface;
-import view.SetStatusForEmployee;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
-import java.io.ObjectInputFilter.Status;
 import java.awt.event.ActionEvent;
 
 public class SetEmployeeStatusController implements ActionListener {
     private Shop shop;
     private JFrame frame;
-    private JComboBox combo;
+    private JComboBox<String> combo;
     private Employee em;
+    private JTextField firstName;
 
-    public SetEmployeeStatusController(Shop s, JComboBox combo, JTextField firstName) {
+    public SetEmployeeStatusController(JFrame frame, Shop s, JComboBox<String> combo,
+            JTextField firstName) {
+        this.frame = frame;
         this.shop = s;
         this.combo = combo;
-        // check if the employee exists and return error if not
-        for (Employee e : shop.getEmployeeList()) {
-            if (e.getFirstName().equals(firstName.getText())) {
-                this.em = e;
+        this.firstName = firstName;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        for (Employee emp : shop.getEmployeeList()) {
+            if (emp.getFirstName().equals(firstName.getText())) {
+                this.em = emp;
             }
         }
         if (em == null) {
-            JOptionPane.showMessageDialog(null, "Employee does not exist", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Employee does not exist", "Error",
+                    JOptionPane.ERROR_MESSAGE);
             new MainInterface(shop);
         } else {
             int status = combo.getSelectedIndex();
@@ -40,19 +44,14 @@ public class SetEmployeeStatusController implements ActionListener {
             } else if (status == 1) {
                 em.setStatus("EN SERVICE");
             } else if (status == 2) {
-                em.setStatus("A FINIS");
+                em.setStatus("A FINI");
             } else {
                 em.setStatus("VIRE");
             }
-            // System.out.print(em.getStatus());
+
+            frame.dispose();
             new MainInterface(shop);
         }
-
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // get Status of comboBox
 
     }
 }

@@ -1,7 +1,6 @@
 package view;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
 
 import controller.*;
@@ -10,9 +9,10 @@ import model.Shop;
 public class SetStatusForEmployee extends JFrame {
 
     private JTextField tfLastname;
-    private JTextField tfFirstName;
+    // private JTextField tfFirstName;
+
     private JPanel p = new JPanel();
-    String[] optionsToChoose = { "EN PAUSE", "TRAVAILLE..", "A FINIS", "VIRE !" };
+    String[] optionsToChoose = {"EN PAUSE", "TRAVAILLE..", "A FINIS", "VIRE !"};
 
     public SetStatusForEmployee(Shop s) {
         setTitle("Pointage d'employé");
@@ -27,16 +27,19 @@ public class SetStatusForEmployee extends JFrame {
         welcome.setBounds(0, 10, 250, 25);
         welcome.setLayout(null);
         p.add(welcome);
+
         // label for first and last name
         JLabel labelFirstName = new JLabel("Prénom :");
         labelFirstName.setFont(new Font("Verdana", Font.PLAIN, 14));
         labelFirstName.setBounds(100, 120, 100, 25);
         labelFirstName.setLayout(null);
         p.add(labelFirstName);
+
         JTextField tfFirstName = new JTextField();
         tfFirstName.setBounds(100, 140, 300, 25);
         p.add(tfFirstName);
         tfFirstName.setColumns(10);
+
         JLabel labelLastName = new JLabel("Nom :");
         labelLastName.setFont(new Font("Verdana", Font.PLAIN, 14));
         labelLastName.setBounds(100, 160, 100, 25);
@@ -53,13 +56,8 @@ public class SetStatusForEmployee extends JFrame {
         p.add(jComboBox);
 
         JButton btnSubmit = new JButton("Valider");
-        btnSubmit.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                new SetEmployeeStatusController(s, jComboBox, tfFirstName);
-                dispose();
-            }
-
-        });
+        btnSubmit.addActionListener(
+                new SetEmployeeStatusController(this, s, jComboBox, tfFirstName));
         btnSubmit.setLayout(null);
         btnSubmit.setBounds(100, 250, 300, 25);
         p.add(btnSubmit);
