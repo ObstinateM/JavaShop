@@ -1,11 +1,8 @@
 package view;
 
 import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.text.StyledEditorKit.BoldAction;
-
-import controller.*;
+import controller.CloseAndOpenNewShopWindow;
 
 public class Login extends JFrame {
 
@@ -24,8 +21,7 @@ public class Login extends JFrame {
         setResizable(false);
         setVisible(true);
         // label
-        JLabel labelWelcome1 = new JLabel(
-                "Bienvenue dans votre gestionnaire de magasin ! ");
+        JLabel labelWelcome1 = new JLabel("Bienvenue dans votre gestionnaire de magasin ! ");
         labelWelcome1.setHorizontalAlignment(SwingConstants.CENTER);
         labelWelcome1.setFont(new Font("Verdana", Font.PLAIN, 18));
 
@@ -55,24 +51,12 @@ public class Login extends JFrame {
         // button
         JButton btnLogin = new JButton("Se connecter");
         btnLogin.setBounds(100, 250, 300, 25);
-        btnLogin.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                new NewShopWindow();
-            }
-        });
+        btnLogin.addActionListener(new CloseAndOpenNewShopWindow(this));
         p.add(btnLogin);
 
         JButton btnewShop = new JButton("Pas de magasin ? Créez-en un !");
         btnewShop.setBounds(100, 400, 300, 25);
-        btnewShop.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                dispose();
-                new NewShopWindow();
-            }
-        });
-
+        btnewShop.addActionListener(new CloseAndOpenNewShopWindow(this));
         p.add(btnewShop);
-
     }
 }
