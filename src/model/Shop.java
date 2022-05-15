@@ -103,4 +103,13 @@ public class Shop {
         }
         return null;
     }
+
+    public Computer getComputerByName(String name) {
+        for (Computer computer : computerList) {
+            if (computer.getName().equals(name)) {
+                return computer;
+            }
+        }
+        return null;
+    }
 }

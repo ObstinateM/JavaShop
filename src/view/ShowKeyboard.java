@@ -81,7 +81,7 @@ public class ShowKeyboard extends JFrame {
         btnAdd.addActionListener(new AddKeyboardStock(shop, tfNumberToAdd, cbName));
         contentPane.add(btnAdd);
 
-        JButton btnCancel = new JButton("Close");
+        JButton btnCancel = new JButton("Fermer");
         btnCancel.setBounds(51, 274, 117, 29);
         btnCancel.addActionListener(new CloseCurrent(this));
         contentPane.add(btnCancel);
@@ -95,18 +95,4 @@ public class ShowKeyboard extends JFrame {
         new RefreshDataShowKeyboard(shop, keyboard, lblNumberSell, lblInventory, lblPrice,
                 lblMechanical, lblRGB, lblKeypad, lblWireless, cbName);
     }
-
-    // public void refreshData() {
-    // keyboard = shop.getKeyboardByName(cbName.getSelectedItem().toString());
-    // lblNumberSell.setText(keyboard.getNumberOfSell() + " vendus");
-    // lblInventory.setText(keyboard.getInventory() + " en stocks");
-    // lblPrice.setText("Prix : " + keyboard.getPrice() + "€");
-    // lblMechanical.setText(keyboard.isMechanical() ? "Le clavier est mechanique"
-    // : "Le clavier n'est pas mechanique");
-    // lblRGB.setText(keyboard.isRGB() ? "Le clavier est RGB" : "Le clavier n'est pas RGB");
-    // lblKeypad.setText(
-    // keyboard.hasKeypad() ? "Le clavier a un keypad" : "Le clavier n'a pas de keypad");
-    // lblWireless.setText(keyboard.isWireless() ? "Le clavier est sans fil"
-    // : "Le clavier n'est pas sans fil");
-    // }
 }
