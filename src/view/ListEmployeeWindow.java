@@ -23,11 +23,8 @@ public class ListEmployeeWindow extends JFrame {
 
         setVisible(true);
         // label
-        JLabel labelWelcome1 = new JLabel(
-                "Voici la liste de tout vos employees : ");
-        labelWelcome1.setHorizontalAlignment(SwingConstants.CENTER);
+        JLabel labelWelcome1 = new JLabel("Voici la liste de tout vos employees : ");
         labelWelcome1.setFont(new Font("Verdana", Font.PLAIN, 18));
-
         labelWelcome1.setBounds(0, 12, 500, 25);
         p.add(labelWelcome1);
 
@@ -36,5 +33,11 @@ public class ListEmployeeWindow extends JFrame {
         textAreaEmployee.setText(s.getAllEmployeeAsString());
         textAreaEmployee.setBounds(0, 50, 700, 200);
         p.add(textAreaEmployee);
+        // button retour
+        JButton btnBack = new JButton("Retour");
+        btnBack.setBounds(10, 300, 100, 30);
+        btnBack.setBackground(Color.decode("#C70039"));
+        btnBack.addActionListener(new CloseAndOpenMainInterface(s, this));
+        p.add(btnBack);
     }
 }

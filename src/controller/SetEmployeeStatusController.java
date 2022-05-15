@@ -23,11 +23,17 @@ public class SetEmployeeStatusController implements ActionListener {
 
     public SetEmployeeStatusController(Shop s, JComboBox combo, JTextField firstName) {
         this.shop = s;
-        // this.frame = f;
         this.combo = combo;
-        if (firstName.getText() != null) {
-            this.em = s.getEmployeeByFirstName(firstName.getText());
-
+        // check if the employee exists and return error if not
+        for (Employee e : shop.getEmployeeList()) {
+            if (e.getFirstName().equals(firstName.getText())) {
+                this.em = e;
+            }
+        }
+        if (em == null) {
+            JOptionPane.showMessageDialog(null, "Employee does not exist", "Error", JOptionPane.ERROR_MESSAGE);
+            new MainInterface(shop);
+        } else {
             int status = combo.getSelectedIndex();
             if (status == 0) {
                 em.setStatus("EN PAUSE");
@@ -38,10 +44,7 @@ public class SetEmployeeStatusController implements ActionListener {
             } else {
                 em.setStatus("VIRE");
             }
-            System.out.print(em.getStatus());
-            // close window
-
-            // frame.dispose();
+            // System.out.print(em.getStatus());
             new MainInterface(shop);
         }
 
