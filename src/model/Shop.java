@@ -19,17 +19,25 @@ public class Shop {
         this.password = password;
 
         // Hard coded data
-        computerList.add(new Computer(0, "MacBook Pro", 2999.99, 10, 0, "Intel Core i7", 16, 512));
-        computerList.add(new Computer(1, "MacBook Air", 1999.99, 10, 0, "Intel Core i5", 8, 256));
+        computerList
+                .add(new Computer(0, "MacBook Pro 2020", 2999.99, 19, 1, "Intel Core i7", 16, 198));
+        computerList
+                .add(new Computer(1, "MacBook Air 2019", 1999.99, 18, 3, "Intel Core i5", 24, 256));
 
-        keyboardList.add(new Keyboard(0, "Logitech G502", 99.99, 10, 0, true, true, true, true));
-        keyboardList.add(new Keyboard(1, "Logitech G666", 66.6, 10, 0, true, true, false, false));
+        keyboardList.add(new Keyboard(0, "Logitech G518", 99.99, 17, 3, true, true, true, true));
+        keyboardList.add(new Keyboard(1, "Logitech G666", 66.6, 17, 1, true, true, false, false));
 
-        screenList.add(new Screen(0, "LG OLED", 299.99, 10, 0, 15, 17, 60, 1));
-        screenList.add(new Screen(1, "Samsung OLED", 399.99, 10, 0, 15, 19, 144, 5));
+        screenList.add(new Screen(0, "LG OLED 2018", 299.99, 18, 1, 15, 17, 60, 2));
+        screenList.add(new Screen(1, "Samsung QLED 2017", 399.99, 17, 6, 15, 19, 144, 1));
 
-        customerList.add(new Customer("John", "Doe", "01/01/1990", "HOMME", 0));
-        customerList.add(new Customer("Jane", "Doe", "01/01/1990", "FEMME", 1));
+        customerList.add(new Customer("Arthur", "Couteau", "01/01/1990", "HOMME", 20201838));
+        customerList.add(new Customer("Mathis", "Beauville", "01/01/1990", "HOMME", 20200048));
+        customerList.add(new Customer("Jane", "Doe", "17/01/1990", "FEMME", 27));
+
+        employeeList.add(new Employee("John", "Doe", "01/01/1990", "HOMME", 20161866));
+        employeeList.get(0).setStatus("Travaille");
+        employeeList.add(new Employee("Jane", "Doe", "01/01/1990", "FEMME", 20200021));
+        employeeList.get(1).setStatus("En pause");
     }
 
     public String getAddress() {
@@ -79,17 +87,23 @@ public class Shop {
     public String getAllArticlesAsString() {
         String result = "Ordinateurs :\n";
         for (Computer computer : computerList) {
-            result += "    " + computer.getName() + "\n";
+            result += "    " + computer.getName() + " | "
+                    + String.format("%.02f", computer.getPrice() * computer.getNumberOfSell())
+                    + " € de profit" + " | " + computer.getInventory() + " en stocks" + "\n";
         }
 
         result += "\nClaviers :\n";
         for (Keyboard keyboard : keyboardList) {
-            result += "    " + keyboard.getName() + "\n";
+            result += "    " + keyboard.getName() + " | "
+                    + String.format("%.02f", keyboard.getPrice() * keyboard.getNumberOfSell())
+                    + " € de profit" + " | " + keyboard.getInventory() + " en stocks" + "\n";
         }
 
         result += "\nEcrans :\n";
         for (Screen screen : screenList) {
-            result += "    " + screen.getName() + "\n";
+            result += "    " + screen.getName() + " | "
+                    + String.format("%.02f", screen.getPrice() * screen.getNumberOfSell())
+                    + " € de profit" + " | " + screen.getInventory() + " en stocks" + "\n";
         }
         return result;
     }
