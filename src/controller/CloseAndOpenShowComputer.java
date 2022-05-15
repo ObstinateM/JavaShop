@@ -1,23 +1,17 @@
 package controller;
 
-import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import model.Shop;
 import view.ShowComputer;
-import java.awt.event.ActionEvent;
 
-public class CloseAndOpenShowComputer implements ActionListener {
-    private JFrame frame;
-    private Shop s;
+public class CloseAndOpenShowComputer extends CloseAndOpen {
 
     public CloseAndOpenShowComputer(JFrame f, Shop s) {
-        this.frame = f;
-        this.s = s;
+        super(f, s);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        frame.dispose();
-        new ShowComputer(this.s);
+    public void open(Shop shop) {
+        new ShowComputer(shop);
     }
 }
