@@ -5,7 +5,7 @@ public class Employee extends Person {
     private String status = "A DEFINIR";
     private int id;
 
-    public Employee(String firstName, String lastName, String dob, int sex, int id) {
+    public Employee(String firstName, String lastName, String dob, String sex, int id) {
         super(firstName, lastName, dob, sex);
         this.id = id;
     }

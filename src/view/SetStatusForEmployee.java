@@ -23,31 +23,23 @@ public class SetStatusForEmployee extends JFrame {
 
         setVisible(true);
         // label
-        // JLabel welcome = new JLabel("Pointez votre status :");
-        // welcome.setHorizontalAlignment(SwingConstants.CENTER);
-        // welcome.setFont(new Font("Verdana", Font.PLAIN, 18));
-        // p.add(welcome);
-        // textField
-        tfFirstName = new JTextField();
+        JLabel welcome = new JLabel("Pointez votre status :");
+        welcome.setHorizontalAlignment(SwingConstants.CENTER);
+        welcome.setFont(new Font("Verdana", Font.PLAIN, 18));
+        p.add(welcome);
+        JTextField tfFirstName = new JTextField();
         tfFirstName.setBounds(100, 150, 300, 25);
         p.add(tfFirstName);
         tfFirstName.setColumns(10);
 
-        // tfLastname = new JTextField();
-        // tfLastname.setBounds(100, 180, 300, 25);
-        // p.add(tfLastname);
-        // tfLastname.setColumns(10);
+        tfLastname = new JTextField();
+        tfLastname.setBounds(100, 180, 300, 25);
+        p.add(tfLastname);
+        tfLastname.setColumns(10);
 
         JComboBox<String> jComboBox = new JComboBox<>(optionsToChoose);
         jComboBox.setBounds(100, 210, 300, 25);
         p.add(jComboBox);
-
-        // JButton btnSubmit = new JButton("Valider");
-        // btnSubmit.addActionListener(new SetEmployeeStatusController(s, this,
-        // jComboBox, tfFirstName));
-        // btnSubmit.setLayout(null);
-        // btnSubmit.setBounds(100, 250, 300, 25);
-        // p.add(btnSubmit);
 
         JButton btnSubmit = new JButton("Valider");
         btnSubmit.addActionListener(new ActionListener() {
@@ -61,10 +53,10 @@ public class SetStatusForEmployee extends JFrame {
         btnSubmit.setBounds(100, 250, 300, 25);
         p.add(btnSubmit);
 
-        // JButton btnNewEmployee = new JButton("Nouveau ? Cliquez ici");
-        // btnNewEmployee.setBounds(100, 300, 150, 20);
-        // btnNewEmployee.addActionListener(new CloseAndOpenNewEmployeeWindow(this, s));
-        // p.add(btnNewEmployee);
+        JButton btnNewEmployee = new JButton("Nouveau ? Cliquez ici");
+        btnNewEmployee.setBounds(100, 300, 150, 20);
+        btnNewEmployee.addActionListener(new CloseAndOpenNewEmployeeWindow(this, s));
+        p.add(btnNewEmployee);
 
     }
 
