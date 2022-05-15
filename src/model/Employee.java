@@ -3,11 +3,9 @@ package model;
 public class Employee extends Person {
 
     private String status = "A DEFINIR";
-    private int id;
 
     public Employee(String firstName, String lastName, String dob, String sex, int id) {
-        super(firstName, lastName, dob, sex);
-        this.id = id;
+        super(firstName, lastName, dob, sex, id);
     }
 
     public String getStatus() {
@@ -20,7 +18,7 @@ public class Employee extends Person {
 
     @Override
     public int getId() {
-        return id;
+        return this.id;
     }
 
     @Override

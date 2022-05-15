@@ -24,9 +24,6 @@ public class LoginController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        System.out.println(tfPassword.getPassword());
-        System.out.println(shop.getPassword());
-
         if (tfNameShop.getText().equals(shop.getName())
                 && shop.getPassword().equals(new String(tfPassword.getPassword()))) {
             frame.dispose();
@@ -36,6 +33,5 @@ public class LoginController implements ActionListener {
                     "Votre nom de magasin ou votre mot de passe est incorrect", "Erreur",
                     JOptionPane.ERROR_MESSAGE);
         }
-
     }
 }
