@@ -61,13 +61,13 @@ public class MainInterface extends JFrame {
         btnNewArticle.addActionListener(new CloseAndOpenNewArticle(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnNewArticle);
-      
+
         JButton btnShowArticles = new JButton("Lister les articles");
-        btnShowArticles.setBounds(20, 130, 150, 20);
+        btnShowArticles.setBounds(20, 210, 150, 20);
         btnShowArticles.addActionListener(new CloseAndOpenShowArticle(this, s));
         btnShowArticles.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnShowArticles);
-       
+
         // button for define the status of an employee
         JButton btnSetStatus = new JButton("Pointage d'employé");
         btnSetStatus.setBounds(20, 130, 150, 20);
