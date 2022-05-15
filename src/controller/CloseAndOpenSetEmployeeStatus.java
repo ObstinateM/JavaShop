@@ -3,7 +3,6 @@ package controller;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import model.Shop;
-import view.NewEmployeWindow;
 import view.SetStatusForEmployee;
 
 import java.awt.event.ActionEvent;

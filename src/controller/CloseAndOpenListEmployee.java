@@ -4,7 +4,6 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import model.Shop;
 import view.ListEmployeeWindow;
-import view.NewComputer;
 import java.awt.event.ActionEvent;
 
 public class CloseAndOpenListEmployee implements ActionListener {
