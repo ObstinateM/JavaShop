@@ -60,7 +60,7 @@ public class NewOrder extends JFrame {
         JButton btnBack = new JButton("Retour");
         btnBack.setBounds(20, 400, 80, 25);
         btnBack.setBackground(Color.decode("#C70039"));
-        btnBack.addActionListener(new CloseAndOpenMainInterface(s, this));
+        btnBack.addActionListener(new CloseAndOpenMain(this, s));
         contentPane.add(btnBack);
     }
 }

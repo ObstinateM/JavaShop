@@ -74,12 +74,6 @@ public class MainInterface extends JFrame {
         btnListEmployee.addActionListener(new CloseAndOpenListEmployee(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnListEmployee);
-        // Order button
-        JButton btnOrder = new JButton("Nouvelle Commande");
-        btnOrder.setBounds(20, 290, 150, 20);
-        btnOrder.addActionListener(new CloseAndOpenNewOrder(this, s));
-        btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
-        rightSide.add(btnOrder);
 
         JButton btnShowArticles = new JButton("Lister les articles");
         btnShowArticles.setBounds(20, 210, 150, 20);
@@ -98,6 +92,12 @@ public class MainInterface extends JFrame {
         btnShowCustomer.addActionListener(new CloseAndOpenShowCustomer(this, s));
         btnShowCustomer.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnShowCustomer);
+
+        JButton btnOrder = new JButton("Nouvelle Commande");
+        btnOrder.setBounds(20, 330, 150, 20);
+        btnOrder.addActionListener(new CloseAndOpenNewOrder(this, s));
+        btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnOrder);
 
         // MIDLE //
         // MIDLE //
