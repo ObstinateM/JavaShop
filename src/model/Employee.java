@@ -2,9 +2,7 @@ package model;
 
 public class Employee extends Person {
 
-    private Status status;
-    private int salary;
-    private double timeWorked;
+    private String status = "A DEFINIR";
     private int id;
 
     public Employee(String firstName, String lastName, String dob, int sex, int id) {
@@ -12,28 +10,12 @@ public class Employee extends Person {
         this.id = id;
     }
 
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    public double getTimeWorked() {
-        return timeWorked;
-    }
-
-    public void setTimeWorked(double timeWorked) {
-        this.timeWorked = timeWorked;
     }
 
     @Override
@@ -45,4 +27,5 @@ public class Employee extends Person {
     public void setId(int id) {
         this.id = id;
     }
+
 }
