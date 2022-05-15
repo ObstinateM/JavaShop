@@ -11,6 +11,7 @@ public class Shop {
     private ArrayList<Keyboard> keyboardList = new ArrayList<Keyboard>();
     private ArrayList<Screen> screenList = new ArrayList<Screen>();
     private ArrayList<Employee> employeeList = new ArrayList<Employee>();
+    private ArrayList<Order> orderList = new ArrayList<Order>();
 
     public Shop(String name, String password, String address) {
         this.address = address;
@@ -66,6 +67,10 @@ public class Shop {
 
     public ArrayList<Employee> getEmployeeList() {
         return this.employeeList;
+    }
+
+    public ArrayList<Order> getOrderList() {
+        return this.orderList;
     }
 
     public String getAllArticlesAsString() {
@@ -145,5 +150,21 @@ public class Shop {
         }
 
         return null;
+    }
+
+    // methode for Order
+    public String getAllOrdersAsString() {
+        String result = "";
+        for (Order o : orderList) {
+            // get all article in Order
+            for (Article a : o.getArticlesList()) {
+                result += "Name :" + o.getOrderName() + " - " + o.getId() + " :\n" + "    " + a.getName() + " - "
+                        + a.getPrice() + "€ - " + o.getQuantity() + "\n";
+
+            }
+
+        }
+        return result;
+
     }
 }

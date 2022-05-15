@@ -3,15 +3,14 @@ package controller;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import model.Shop;
-import view.*;
-
+import view.NewOrderKeyBoard;
 import java.awt.event.ActionEvent;
 
-public class CloseAndOpenSetEmployeeStatus implements ActionListener {
+public class CloseAndOpenNewOrderKeyBoard implements ActionListener {
     private JFrame frame;
     private Shop s;
 
-    public CloseAndOpenSetEmployeeStatus(JFrame f, Shop s) {
+    public CloseAndOpenNewOrderKeyBoard(JFrame f, Shop s) {
         this.frame = f;
         this.s = s;
     }
@@ -19,6 +18,6 @@ public class CloseAndOpenSetEmployeeStatus implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         frame.dispose();
-        new NewOrder(this.s);
+        new NewOrderKeyBoard(this.s);
     }
 }

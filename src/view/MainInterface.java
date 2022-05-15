@@ -80,6 +80,12 @@ public class MainInterface extends JFrame {
         btnListEmployee.addActionListener(new CloseAndOpenListEmployee(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnListEmployee);
+        // Order button
+        JButton btnOrder = new JButton("Nouvelle Commande");
+        btnOrder.setBounds(20, 290, 150, 20);
+        btnOrder.addActionListener(new CloseAndOpenNewOrder(this, s));
+        btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnOrder);
 
         // MIDLE //
         // MIDLE //
