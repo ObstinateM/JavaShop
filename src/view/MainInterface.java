@@ -4,10 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import java.awt.BorderLayout;
 import model.*;
 import controller.*;
-import view.*;
 
 public class MainInterface extends JFrame {
 
@@ -51,16 +49,25 @@ public class MainInterface extends JFrame {
         rightSide.setBackground(Color.decode("#696969"));
         rightSide.setLayout(null);
         p.add(rightSide);
+
         JButton btnEmployee = new JButton("Ajouter un Employé");
         btnEmployee.setBounds(20, 50, 150, 20);
         btnEmployee.addActionListener(new CloseAndOpenNewEmployeeWindow(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnEmployee);
+
         JButton btnNewArticle = new JButton("Ajouter un article");
         btnNewArticle.setBounds(20, 90, 150, 20);
         btnNewArticle.addActionListener(new CloseAndOpenNewArticle(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnNewArticle);
+      
+        JButton btnShowArticles = new JButton("Lister les articles");
+        btnShowArticles.setBounds(20, 130, 150, 20);
+        btnShowArticles.addActionListener(new CloseAndOpenShowArticle(this, s));
+        btnShowArticles.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnShowArticles);
+       
         // button for define the status of an employee
         JButton btnSetStatus = new JButton("Pointage d'employé");
         btnSetStatus.setBounds(20, 130, 150, 20);
@@ -107,7 +114,8 @@ public class MainInterface extends JFrame {
         textAreaStatusEmploye.setText(s.getAllEmployeeStatus());
         middle.add(textAreaStatusEmploye);
         JScrollPane scrollPaneStatus = new JScrollPane(textAreaStatusEmploye);
-        scrollPaneStatus.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPaneStatus
+                .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPaneStatus.setBounds(15, 50, 200, 300);
         scrollPaneStatus.setBorder(lineborder);
         middle.add(scrollPaneStatus);

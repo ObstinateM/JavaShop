@@ -46,6 +46,7 @@ public class NewComputerController implements ActionListener {
                     .add(new Computer(id, tfName.getText(), Double.parseDouble(tdPrice.getText()),
                             Integer.parseInt(tfInventory.getText()), 0, tfProc.getText(),
                             Integer.parseInt(tfRam.getText()), Integer.parseInt(tfHDD.getText())));
+            JOptionPane.showMessageDialog(null, "Ordinateur ajouté");
             frame.dispose();
             new MainInterface(shop);
         }

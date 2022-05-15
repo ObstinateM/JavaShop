@@ -3,6 +3,7 @@ package view;
 import javax.swing.*;
 import controller.*;
 import model.*;
+import java.awt.Color;
 
 public class NewEmployeWindow extends JFrame {
 
@@ -13,7 +14,7 @@ public class NewEmployeWindow extends JFrame {
     private JTextField tfLastName;
     private JTextField dob;
 
-    String[] optionsToChoose = { "Homme", "Femme" };
+    String[] optionsToChoose = {"Homme", "Femme"};
 
     public NewEmployeWindow(Shop s) {
         setTitle("Ajouter un employé");
@@ -36,8 +37,9 @@ public class NewEmployeWindow extends JFrame {
         labelDob.setHorizontalAlignment(SwingConstants.CENTER);
         labelDob.setBounds(100, 220, 300, 25);
         p.add(labelDob);
-        JLabel labelIndication = new JLabel("*Veuillez entrer votre date de naissance sous ce format : JJ/MM/AAAA");
-        labelIndication.setFont(new Font("Verdana", Font.ITALIC, 10));
+        JLabel labelIndication =
+                new JLabel("*Veuillez entrer votre date de naissance sous ce format : JJ/MM/AAAA");
+        // labelIndication.setFont(new Font("Verdana", Font.ITALIC, 10));
         labelIndication.setForeground(Color.RED);
         labelIndication.setHorizontalAlignment(SwingConstants.CENTER);
         labelIndication.setBounds(50, 260, 400, 25);
@@ -65,12 +67,12 @@ public class NewEmployeWindow extends JFrame {
         btnNewEmploye.addActionListener(
                 new NewEmployeeController(this, s, tfFirstName, tfLastName, dob, jComboBox));
         p.add(btnNewEmploye);
+
         // button retour
         JButton btnBack = new JButton("Retour");
         btnBack.setBounds(10, 500, 100, 30);
         btnBack.setBackground(Color.decode("#C70039"));
         btnBack.addActionListener(new CloseAndOpenMainInterface(s, this));
         p.add(btnBack);
-
     }
 }
