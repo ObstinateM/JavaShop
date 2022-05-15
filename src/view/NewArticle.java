@@ -42,7 +42,7 @@ public class NewArticle extends JFrame {
 
         // Back au menu principal
         JButton btnBack = new JButton("Retour");
-        btnBack.setBounds(167, 146, 100, 30);
+        btnBack.setBounds(167, 146, 117, 27);
         btnBack.setBackground(Color.decode("#C70039"));
         btnBack.addActionListener(new CloseAndOpenMainInterface(s, this));
         contentPane.add(btnBack);
