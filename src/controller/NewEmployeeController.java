@@ -39,6 +39,7 @@ public class NewEmployeeController implements ActionListener {
             int min = 100;
             int max = 999;
             int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
+
             Employee employee = new Employee(tfFirstName.getText(), tfLastName.getText(),
                     dob.getText(), sexNumber, id);
             shop.getEmployeeList().add(employee);

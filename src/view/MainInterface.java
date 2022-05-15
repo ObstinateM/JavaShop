@@ -62,6 +62,14 @@ public class MainInterface extends JFrame {
         btnNewArticle.addActionListener(new CloseAndOpenNewArticle(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnNewArticle);
+        // button for define the status of an employee
+        JButton btnSetStatus = new JButton("Pointage d'employé");
+        btnSetStatus.setBounds(20, 130, 150, 20);
+        btnSetStatus.addActionListener(new CloseAndOpenSetEmployeeStatus(this, s));
+        btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnSetStatus);
+        // new employee window
+
         // FAUT GARDER
         // FAUT GARDER
         // FAUT GARDER
@@ -106,7 +114,7 @@ public class MainInterface extends JFrame {
         middle.add(statusEmploye);
         JTextPane textAreaStatusEmploye = new JTextPane();
         textAreaStatusEmploye.setEditable(false);
-        textAreaStatusEmploye.setText(s.getAllEmployeeAsString());
+        textAreaStatusEmploye.setText(s.getAllEmployeeStatus());
         middle.add(textAreaStatusEmploye);
         JScrollPane scrollPaneStatus = new JScrollPane(textAreaStatusEmploye);
         scrollPaneStatus.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
