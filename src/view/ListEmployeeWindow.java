@@ -36,7 +36,7 @@ public class ListEmployeeWindow extends JFrame {
         JButton btnBack = new JButton("Retour");
         btnBack.setBounds(10, 300, 100, 30);
         btnBack.setBackground(Color.decode("#C70039"));
-        btnBack.addActionListener(new CloseAndOpenMainInterface(s, this));
+        btnBack.addActionListener(new CloseAndOpenMain(this, s));
         p.add(btnBack);
     }
 }

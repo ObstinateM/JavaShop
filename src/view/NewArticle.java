@@ -48,7 +48,7 @@ public class NewArticle extends JFrame {
         JButton btnBack = new JButton("Retour");
         btnBack.setBounds(167, 146, 117, 27);
         btnBack.setBackground(Color.decode("#C70039"));
-        btnBack.addActionListener(new CloseAndOpenMainInterface(s, this));
+        btnBack.addActionListener(new CloseAndOpenMain(this, s));
         contentPane.add(btnBack);
     }
 }
