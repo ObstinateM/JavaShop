@@ -64,7 +64,7 @@ public class MainInterface extends JFrame {
 
         JButton btnShowArticles = new JButton("Lister les articles");
         btnShowArticles.setBounds(20, 130, 150, 20);
-        btnShowArticles.addActionListener(new CloseAndOpenShowKeyboard(this, s));
+        btnShowArticles.addActionListener(new CloseAndOpenShowArticle(this, s));
         btnShowArticles.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnShowArticles);
         // FAUT GARDER

@@ -11,6 +11,6 @@ public class Main {
         // login.setSize(500, 500);
         // login.setVisible(true);
         Shop shop = new Shop("test", "password", "address");
-        new ShowScreen(shop);
+        new MainInterface(shop);
     }
 }
