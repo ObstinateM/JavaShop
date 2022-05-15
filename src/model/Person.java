@@ -2,14 +2,14 @@ package model;
 
 public class Person {
 
-    private int id;
-    private String firstName;
-    private String lastName;
-    private String dob;
-    private String sex;
+    protected int id;
+    protected String firstName;
+    protected String lastName;
+    protected String dob;
+    protected String sex;
 
-    public Person(String firstName, String lastName, String dob, String sex) {
-        this.id = 1;
+    public Person(String firstName, String lastName, String dob, String sex, int id) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;

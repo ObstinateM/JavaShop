@@ -2,11 +2,11 @@ package model;
 
 public class Article {
 
-    private int id;
-    private String name;
-    private double price;
-    private int inventory;
-    private int numberOfSell;
+    protected int id;
+    protected String name;
+    protected double price;
+    protected int inventory;
+    protected int numberOfSell;
 
     public Article(int id, String name, double price, int inventory, int numberOfSell) {
         this.id = id;

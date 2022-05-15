@@ -62,12 +62,6 @@ public class MainInterface extends JFrame {
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnNewArticle);
 
-        JButton btnShowArticles = new JButton("Lister les articles");
-        btnShowArticles.setBounds(20, 210, 150, 20);
-        btnShowArticles.addActionListener(new CloseAndOpenShowArticle(this, s));
-        btnShowArticles.setHorizontalAlignment(SwingConstants.CENTER);
-        rightSide.add(btnShowArticles);
-
         // button for define the status of an employee
         JButton btnSetStatus = new JButton("Pointage d'employé");
         btnSetStatus.setBounds(20, 130, 150, 20);
@@ -80,6 +74,18 @@ public class MainInterface extends JFrame {
         btnListEmployee.addActionListener(new CloseAndOpenListEmployee(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnListEmployee);
+
+        JButton btnShowArticles = new JButton("Lister les articles");
+        btnShowArticles.setBounds(20, 210, 150, 20);
+        btnShowArticles.addActionListener(new CloseAndOpenShowArticle(this, s));
+        btnShowArticles.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnShowArticles);
+
+        JButton btnAddClient = new JButton("Ajouter un client");
+        btnAddClient.setBounds(20, 250, 150, 20);
+        btnAddClient.addActionListener(new CloseAndOpenNewCustomer(this, s));
+        btnAddClient.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnAddClient);
 
         // MIDLE //
         // MIDLE //
@@ -98,7 +104,9 @@ public class MainInterface extends JFrame {
         JTextPane textAreaRestock = new JTextPane();
         textAreaRestock.setEditable(false);
         textAreaRestock.setText(s.getAllArticlesAsString());
+        textAreaRestock.setHighlighter(null);
         middle.add(textAreaRestock);
+
         JScrollPane scrollPane = new JScrollPane(textAreaRestock);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
         scrollPane.setBounds(259, 50, 400, 300);
@@ -109,10 +117,13 @@ public class MainInterface extends JFrame {
         statusEmploye.setFont(new Font("Tahoma", Font.PLAIN, 18));
         statusEmploye.setBounds(15, 10, 300, 20);
         middle.add(statusEmploye);
+
         JTextPane textAreaStatusEmploye = new JTextPane();
         textAreaStatusEmploye.setEditable(false);
+        textAreaStatusEmploye.setHighlighter(null);
         textAreaStatusEmploye.setText(s.getAllEmployeeStatus());
         middle.add(textAreaStatusEmploye);
+
         JScrollPane scrollPaneStatus = new JScrollPane(textAreaStatusEmploye);
         scrollPaneStatus
                 .setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);

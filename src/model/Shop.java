@@ -11,6 +11,7 @@ public class Shop {
     private ArrayList<Keyboard> keyboardList = new ArrayList<Keyboard>();
     private ArrayList<Screen> screenList = new ArrayList<Screen>();
     private ArrayList<Employee> employeeList = new ArrayList<Employee>();
+    private ArrayList<Customer> customerList = new ArrayList<Customer>();
 
     public Shop(String name, String password, String address) {
         this.address = address;
@@ -26,6 +27,9 @@ public class Shop {
 
         screenList.add(new Screen(0, "LG OLED", 299.99, 10, 0, 15, 17, 60, 1));
         screenList.add(new Screen(1, "Samsung OLED", 399.99, 10, 0, 15, 19, 144, 5));
+
+        customerList.add(new Customer("John", "Doe", "01/01/1990", "HOMME", 0));
+        customerList.add(new Customer("Jane", "Doe", "01/01/1990", "FEMME", 1));
     }
 
     public String getAddress() {
@@ -68,6 +72,10 @@ public class Shop {
         return this.employeeList;
     }
 
+    public ArrayList<Customer> getCustomerList() {
+        return this.customerList;
+    }
+
     public String getAllArticlesAsString() {
         String result = "Ordinateurs :\n";
         for (Computer computer : computerList) {
@@ -99,8 +107,8 @@ public class Shop {
         for (Employee e : employeeList) {
 
             result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : "
-                    + e.getId() + " Sexe : " + e.getSex() + " Date de naissance : " + e.getDob() + " Statut : "
-                    + e.getStatus() + "\n";
+                    + e.getId() + " Sexe : " + e.getSex() + " Date de naissance : " + e.getDob()
+                    + " Statut : " + e.getStatus() + "\n";
         }
         return result;
     }
