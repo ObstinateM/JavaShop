@@ -34,7 +34,7 @@ public class MainInterface extends JFrame {
         JLabel labelShop = new JLabel("Nom du magasin : " + s.getName());
 
         labelShop.setFont(new Font("Verdana", Font.PLAIN, 20));
-        labelShop.setBounds(10, 0, 300, 50);
+        labelShop.setBounds(10, -3, 300, 50);
         header.add(labelShop);
         JLabel labelAddress = new JLabel("Adresse : " + s.getAddress());
 
@@ -50,7 +50,7 @@ public class MainInterface extends JFrame {
         rightSide.setLayout(null);
         p.add(rightSide);
 
-        JButton btnEmployee = new JButton("Ajouter un Employé");
+        JButton btnEmployee = new JButton("Ajouter un employé");
         btnEmployee.setBounds(20, 50, 150, 20);
         btnEmployee.addActionListener(new CloseAndOpenNewEmployeeWindow(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
@@ -86,6 +86,12 @@ public class MainInterface extends JFrame {
         btnAddClient.addActionListener(new CloseAndOpenNewCustomer(this, s));
         btnAddClient.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnAddClient);
+
+        JButton btnShowCustomer = new JButton("Voir les clients");
+        btnShowCustomer.setBounds(20, 290, 150, 20);
+        btnShowCustomer.addActionListener(new CloseAndOpenShowCustomer(this, s));
+        btnShowCustomer.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnShowCustomer);
 
         // MIDLE //
         // MIDLE //

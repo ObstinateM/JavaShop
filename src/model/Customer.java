@@ -39,7 +39,7 @@ public class Customer extends Person {
     }
 
     public boolean canClaimDiscount() {
-        return this.numberOfDiscountAvailable / 50 >= 1;
+        return this.fidelityPoint - 50 >= 0;
     }
 
     public void claimDiscount() {
@@ -47,5 +47,9 @@ public class Customer extends Person {
             return;
         this.fidelityPoint -= 50;
         this.numberOfDiscountAvailable += 1;
+    }
+
+    public int getNumberOfDiscountAvailable() {
+        return this.numberOfDiscountAvailable;
     }
 }

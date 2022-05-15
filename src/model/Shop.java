@@ -32,6 +32,7 @@ public class Shop {
 
         customerList.add(new Customer("Arthur", "Couteau", "01/01/1990", "HOMME", 20201838));
         customerList.add(new Customer("Mathis", "Beauville", "01/01/1990", "HOMME", 20200048));
+        customerList.get(1).setFidelityPoint(100);
         customerList.add(new Customer("Jane", "Doe", "17/01/1990", "FEMME", 27));
 
         employeeList.add(new Employee("John", "Doe", "01/01/1990", "HOMME", 20161866));
@@ -149,6 +150,15 @@ public class Shop {
         for (Screen screen : screenList) {
             if (screen.getName().equals(name)) {
                 return screen;
+            }
+        }
+        return null;
+    }
+
+    public Customer getCustomerByName(String name) {
+        for (Customer customer : customerList) {
+            if (new String(customer.getFirstName() + " " + customer.getLastName()).equals(name)) {
+                return customer;
             }
         }
         return null;
