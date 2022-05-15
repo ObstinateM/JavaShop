@@ -3,12 +3,14 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import controller.CloseAndOpenMain;
 import controller.CloseAndOpenShowComputer;
 import controller.CloseAndOpenShowKeyboard;
 import controller.CloseAndOpenShowScreen;
 import model.Shop;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class ShowArticle extends JFrame {
     private JPanel contentPane;
@@ -41,6 +43,10 @@ public class ShowArticle extends JFrame {
         btnAddKeyboard.addActionListener(new CloseAndOpenShowKeyboard(this, s));
         contentPane.add(btnAddKeyboard);
 
-        // TODO: Add bouton retour
+        JButton btnBack = new JButton("Retour");
+        btnBack.setBounds(167, 146, 117, 27);
+        btnBack.setBackground(Color.decode("#C70039"));
+        btnBack.addActionListener(new CloseAndOpenMain(this, s));
+        contentPane.add(btnBack);
     }
 }

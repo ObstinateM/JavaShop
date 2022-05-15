@@ -5,7 +5,7 @@ import controller.*;
 import model.*;
 import java.awt.Color;
 
-public class NewEmployeWindow extends JFrame {
+public class NewCustomer extends JFrame {
 
     private static final long serialVersionUID = 1L;
 
@@ -16,8 +16,8 @@ public class NewEmployeWindow extends JFrame {
 
     String[] optionsToChoose = {"Homme", "Femme"};
 
-    public NewEmployeWindow(Shop s) {
-        setTitle("Ajouter un employé");
+    public NewCustomer(Shop s) {
+        setTitle("Ajouter un client");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
@@ -65,7 +65,7 @@ public class NewEmployeWindow extends JFrame {
         JButton btnNewEmploye = new JButton("Valider");
         btnNewEmploye.setBounds(100, 400, 300, 25);
         btnNewEmploye.addActionListener(
-                new NewEmployeeController(this, s, tfFirstName, tfLastName, dob, jComboBox));
+                new NewCustomerController(this, s, tfFirstName, tfLastName, dob, jComboBox));
         p.add(btnNewEmploye);
 
         // button retour

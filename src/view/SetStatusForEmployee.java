@@ -70,7 +70,7 @@ public class SetStatusForEmployee extends JFrame {
         JButton btnBack = new JButton("Retour");
         btnBack.setBounds(200, 350, 100, 30);
         btnBack.setBackground(Color.decode("#C70039"));
-        btnBack.addActionListener(new CloseAndOpenMainInterface(s, this));
+        btnBack.addActionListener(new CloseAndOpenMain(this, s));
         p.add(btnBack);
     }
 
