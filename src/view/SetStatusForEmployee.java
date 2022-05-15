@@ -19,18 +19,29 @@ public class SetStatusForEmployee extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(500, 500, 500, 600);
-
+        setBounds(500, 400, 500, 600);
         setVisible(true);
         // label
         JLabel welcome = new JLabel("Pointez votre status :");
-        welcome.setHorizontalAlignment(SwingConstants.CENTER);
         welcome.setFont(new Font("Verdana", Font.PLAIN, 18));
+        welcome.setBounds(0, 10, 250, 25);
+        welcome.setLayout(null);
         p.add(welcome);
+        // label for first and last name
+        JLabel labelFirstName = new JLabel("Prénom :");
+        labelFirstName.setFont(new Font("Verdana", Font.PLAIN, 14));
+        labelFirstName.setBounds(100, 120, 100, 25);
+        labelFirstName.setLayout(null);
+        p.add(labelFirstName);
         JTextField tfFirstName = new JTextField();
-        tfFirstName.setBounds(100, 150, 300, 25);
+        tfFirstName.setBounds(100, 140, 300, 25);
         p.add(tfFirstName);
         tfFirstName.setColumns(10);
+        JLabel labelLastName = new JLabel("Nom :");
+        labelLastName.setFont(new Font("Verdana", Font.PLAIN, 14));
+        labelLastName.setBounds(100, 160, 100, 25);
+        labelLastName.setLayout(null);
+        p.add(labelLastName);
 
         tfLastname = new JTextField();
         tfLastname.setBounds(100, 180, 300, 25);
@@ -54,10 +65,15 @@ public class SetStatusForEmployee extends JFrame {
         p.add(btnSubmit);
 
         JButton btnNewEmployee = new JButton("Nouveau ? Cliquez ici");
-        btnNewEmployee.setBounds(100, 300, 150, 20);
+        btnNewEmployee.setBounds(100, 300, 300, 20);
         btnNewEmployee.addActionListener(new CloseAndOpenNewEmployeeWindow(this, s));
         p.add(btnNewEmployee);
 
+        JButton btnBack = new JButton("Retour");
+        btnBack.setBounds(200, 350, 100, 30);
+        btnBack.setBackground(Color.decode("#C70039"));
+        btnBack.addActionListener(new CloseAndOpenMainInterface(s, this));
+        p.add(btnBack);
     }
 
 }
