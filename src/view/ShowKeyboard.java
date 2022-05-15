@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.AddKeyboardStock;
-import controller.CloseCurrent;
+import controller.CloseAndOpenMain;
 import controller.RefreshDataShowKeyboard;
 import model.Keyboard;
 import model.Shop;
@@ -83,7 +83,7 @@ public class ShowKeyboard extends JFrame {
 
         JButton btnCancel = new JButton("Fermer");
         btnCancel.setBounds(51, 274, 117, 29);
-        btnCancel.addActionListener(new CloseCurrent(this));
+        btnCancel.addActionListener(new CloseAndOpenMain(this, shop));
         contentPane.add(btnCancel);
 
         JButton btnRefresh = new JButton("Refresh");

@@ -24,8 +24,8 @@ public class Shop {
         keyboardList.add(new Keyboard(0, "Logitech G502", 99.99, 10, 0, true, true, true, true));
         keyboardList.add(new Keyboard(1, "Logitech G666", 66.6, 10, 0, true, true, false, false));
 
-        screenList.add(new Screen(0, "LG OLED", 299.99, 10, 0, 15, 17, 60, 200));
-        screenList.add(new Screen(1, "Samsung OLED", 399.99, 10, 0, 15, 19, 144, 200));
+        screenList.add(new Screen(0, "LG OLED", 299.99, 10, 0, 15, 17, 60, 1));
+        screenList.add(new Screen(1, "Samsung OLED", 399.99, 10, 0, 15, 19, 144, 5));
     }
 
     public String getAddress() {
@@ -108,6 +108,15 @@ public class Shop {
         for (Computer computer : computerList) {
             if (computer.getName().equals(name)) {
                 return computer;
+            }
+        }
+        return null;
+    }
+
+    public Screen getScreenByName(String name) {
+        for (Screen screen : screenList) {
+            if (screen.getName().equals(name)) {
+                return screen;
             }
         }
         return null;

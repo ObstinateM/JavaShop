@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.AddComputerStock;
-import controller.CloseCurrent;
+import controller.CloseAndOpenMain;
 import controller.RefreshDataShowComputer;
 import model.Computer;
 import model.Shop;
@@ -63,7 +63,7 @@ public class ShowComputer extends JFrame {
         lblHDD.setBounds(6, 143, 198, 16);
         contentPane.add(lblHDD);
 
-        textField = new JTextField();
+        textField = new JTextField("0");
         textField.setBounds(6, 192, 82, 26);
         contentPane.add(textField);
         textField.setColumns(10);
@@ -79,7 +79,7 @@ public class ShowComputer extends JFrame {
 
         JButton btnClose = new JButton("Fermer");
         btnClose.setBounds(38, 230, 117, 29);
-        btnClose.addActionListener(new CloseCurrent(this));
+        btnClose.addActionListener(new CloseAndOpenMain(this, shop));
         contentPane.add(btnClose);
 
         JButton btnRefresh = new JButton("Refresh");
