@@ -9,7 +9,7 @@ import model.Customer;
 import model.Shop;
 import view.MainInterface;
 import java.awt.event.ActionEvent;
-import utils.Date;
+import utils.Regex;
 
 public class NewCustomerController implements ActionListener {
 
@@ -35,21 +35,31 @@ public class NewCustomerController implements ActionListener {
         if (tfFirstName.getText().isEmpty() || tfLastName.getText().isEmpty()
                 || dob.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
-        } else if (!Date.validateDate(dob.getText())) {
-            JOptionPane.showMessageDialog(null, "Veuillez entrer une date valide");
-        } else {
-            int sexNumber = jComboBox.getSelectedIndex() + 1;
-            String sexString = sexNumber == 1 ? "HOMME" : "FEMME";
-            int min = 100;
-            int max = 999;
-            int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
-
-            Customer customer = new Customer(tfFirstName.getText(), tfLastName.getText(),
-                    dob.getText(), sexString, id);
-            shop.getCustomerList().add(customer);
-            JOptionPane.showMessageDialog(null, "Client ajouté");
-            frame.dispose();
-            new MainInterface(shop);
+            return;
         }
+
+        if (!Regex.validateName(tfFirstName.getText())
+                || !Regex.validateName(tfLastName.getText())) {
+            JOptionPane.showMessageDialog(null, "Veuillez entrer un nom valide");
+            return;
+        }
+
+        if (!Regex.validateDate(dob.getText())) {
+            JOptionPane.showMessageDialog(null, "Veuillez entrer une date valide");
+            return;
+        }
+
+        int sexNumber = jComboBox.getSelectedIndex() + 1;
+        String sexString = sexNumber == 1 ? "HOMME" : "FEMME";
+        int min = 100;
+        int max = 999;
+        int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
+
+        Customer customer = new Customer(tfFirstName.getText(), tfLastName.getText(), dob.getText(),
+                sexString, id);
+        shop.getCustomerList().add(customer);
+        JOptionPane.showMessageDialog(null, "Client ajouté");
+        frame.dispose();
+        new MainInterface(shop);
     }
 }

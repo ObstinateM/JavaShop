@@ -22,7 +22,8 @@ public class ResetPasswordController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         s.setPassword(tfPassword.getText());
         JFrame a = new JFrame();
-        JOptionPane.showMessageDialog(a, "Mot de passe changez avec succès", "Password Changed", 2);
+        JOptionPane.showMessageDialog(a, "Mot de passe changez avec succès", "Mot de passe modifié",
+                2);
         frame.dispose();
     }
 }
