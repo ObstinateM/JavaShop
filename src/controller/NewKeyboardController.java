@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import utils.Regex;
 
 public class NewKeyboardController implements ActionListener {
     private Shop shop;
@@ -39,20 +40,39 @@ public class NewKeyboardController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (tfName.getText().isEmpty() || tfPrice.getText().isEmpty()
                 || tfInventory.getText().isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs", "Empty fied",
+            JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs", "Erreur",
                     JOptionPane.ERROR_MESSAGE);
-        } else {
-            int min = 100;
-            int max = 999;
-            int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
-            shop.getKeyBoardList()
-                    .add(new Keyboard(id, tfName.getText(), Double.parseDouble(tfPrice.getText()),
-                            Integer.parseInt(tfInventory.getText()), 0, tfIsMechanical.isSelected(),
-                            tfIsRGB.isSelected(), tfIsWireless.isSelected(),
-                            tfHasKeypad.isSelected()));
-            JOptionPane.showMessageDialog(null, "Clavier ajouté");
-            frame.dispose();
-            new MainInterface(shop);
+            return;
         }
+
+        if (!Regex.validateLettersAndNumbers(tfName.getText())) {
+            JOptionPane.showMessageDialog(null, "Veuillez entrer un nom valide", "Erreur",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!Regex.validateNumber(tfPrice.getText())) {
+            JOptionPane.showMessageDialog(null, "Veuillez entrer un prix valide", "Erreur",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!Regex.validateNumber(tfInventory.getText())) {
+            JOptionPane.showMessageDialog(null,
+                    "Veuillez entrer un nombre valide dans l'inventaire", "Erreur",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int min = 100;
+        int max = 999;
+        int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
+        shop.getKeyboardList()
+                .add(new Keyboard(id, tfName.getText(), Double.parseDouble(tfPrice.getText()),
+                        Integer.parseInt(tfInventory.getText()), 0, tfIsMechanical.isSelected(),
+                        tfIsRGB.isSelected(), tfIsWireless.isSelected(), tfHasKeypad.isSelected()));
+        JOptionPane.showMessageDialog(null, "Clavier ajouté");
+        frame.dispose();
+        new MainInterface(shop);
     }
 }

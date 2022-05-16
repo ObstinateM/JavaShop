@@ -17,11 +17,23 @@ public class Computer extends Article {
         return proc;
     }
 
+    public void setProc(String proc) {
+        this.proc = proc;
+    }
+
     public int getRamGB() {
         return ramGB;
     }
 
+    public void setRamGB(int ramGB) {
+        this.ramGB = ramGB;
+    }
+
     public int getHddGB() {
         return hddGB;
+    }
+
+    public void setHddGB(int hddGB) {
+        this.hddGB = hddGB;
     }
 }

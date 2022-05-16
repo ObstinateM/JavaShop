@@ -1,14 +1,14 @@
 package view;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.CloseAndOpenMain;
 import controller.NewScreenController;
 import model.Shop;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
 
 public class NewScreen extends JFrame {
 
@@ -22,9 +22,12 @@ public class NewScreen extends JFrame {
     private JTextField tfResponseTime;
 
     public NewScreen(Shop shop) {
+        setTitle("Nouvel écran");
+        setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 230, 610);
+
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);

@@ -1,5 +1,8 @@
 package view;
 
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -8,15 +11,14 @@ import controller.CloseAndOpenShowComputer;
 import controller.CloseAndOpenShowKeyboard;
 import controller.CloseAndOpenShowScreen;
 import model.Shop;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.Color;
 
 public class ShowArticle extends JFrame {
     private JPanel contentPane;
 
     public ShowArticle(Shop s) {
+        setTitle("Article");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 453, 215);
         contentPane = new JPanel();

@@ -34,24 +34,23 @@ public class SetEmployeeStatusController implements ActionListener {
             }
         }
         if (em == null) {
-            JOptionPane.showMessageDialog(null, "Employee does not exist", "Error",
+            JOptionPane.showMessageDialog(null, "Cette employé n'existe pas", "Error",
                     JOptionPane.ERROR_MESSAGE);
             new MainInterface(shop);
+            return;
+        }
+        int status = combo.getSelectedIndex();
+        if (status == 0) {
+            em.setStatus("EN PAUSE");
+        } else if (status == 1) {
+            em.setStatus("EN SERVICE");
+        } else if (status == 2) {
+            em.setStatus("A FINI");
         } else {
-            int status = combo.getSelectedIndex();
-            if (status == 0) {
-                em.setStatus("EN PAUSE");
-            } else if (status == 1) {
-                em.setStatus("EN SERVICE");
-            } else if (status == 2) {
-                em.setStatus("A FINI");
-            } else {
-                em.setStatus("VIRE");
-            }
-
-            frame.dispose();
-            new MainInterface(shop);
+            em.setStatus("VIRE");
         }
 
+        frame.dispose();
+        new MainInterface(shop);
     }
 }

@@ -1,15 +1,21 @@
 package view;
 
-import java.awt.*;
-import javax.swing.*;
-
-import controller.*;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import controller.CloseAndOpenMain;
+import controller.CloseAndOpenNewEmployeeWindow;
+import controller.SetEmployeeStatusController;
 import model.Shop;
 
 public class SetStatusForEmployee extends JFrame {
 
     private JTextField tfLastname;
-    // private JTextField tfFirstName;
 
     private JPanel p = new JPanel();
     String[] optionsToChoose = {"EN PAUSE", "TRAVAILLE..", "A FINIS", "VIRE !"};
@@ -19,16 +25,16 @@ public class SetStatusForEmployee extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(500, 400, 500, 600);
+        setBounds(100, 100, 500, 600);
         setVisible(true);
-        // label
+        setResizable(false);
+
         JLabel welcome = new JLabel("Pointez votre status :");
         welcome.setFont(new Font("Verdana", Font.PLAIN, 18));
         welcome.setBounds(0, 10, 250, 25);
         welcome.setLayout(null);
         p.add(welcome);
 
-        // label for first and last name
         JLabel labelFirstName = new JLabel("Prénom :");
         labelFirstName.setFont(new Font("Verdana", Font.PLAIN, 14));
         labelFirstName.setBounds(100, 120, 100, 25);
@@ -51,7 +57,7 @@ public class SetStatusForEmployee extends JFrame {
         p.add(tfLastname);
         tfLastname.setColumns(10);
 
-        JComboBox<String> jComboBox = new JComboBox<>(optionsToChoose);
+        JComboBox<String> jComboBox = new JComboBox<String>(optionsToChoose);
         jComboBox.setBounds(100, 210, 300, 25);
         p.add(jComboBox);
 

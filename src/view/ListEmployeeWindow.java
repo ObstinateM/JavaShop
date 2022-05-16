@@ -13,15 +13,16 @@ public class ListEmployeeWindow extends JFrame {
     private JPanel p = new JPanel();
 
     public ListEmployeeWindow(Shop s) {
-        setTitle("Connecter-vous a votre magasin");
+        setTitle("Vos employes");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(500, 500, 700, 400);
+        setBounds(100, 100, 700, 400);
 
+        setResizable(false);
         setVisible(true);
         // label
-        JLabel labelWelcome1 = new JLabel("Voici la liste de tout vos employees : ");
+        JLabel labelWelcome1 = new JLabel("Voici la liste de tout vos employes : ");
         labelWelcome1.setFont(new Font("Verdana", Font.PLAIN, 18));
         labelWelcome1.setBounds(0, 12, 500, 25);
         p.add(labelWelcome1);

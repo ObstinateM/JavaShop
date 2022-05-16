@@ -2,9 +2,11 @@ package controller;
 
 import java.awt.event.ActionListener;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import model.Computer;
 import model.Shop;
+import utils.Regex;
 import java.awt.event.ActionEvent;
 
 public class AddComputerStock implements ActionListener {
@@ -21,6 +23,12 @@ public class AddComputerStock implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (!Regex.validateNumber(number.getText())) {
+            JOptionPane.showMessageDialog(null, "Veuillez entrer un nombre valide", "Erreur",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         this.computer = this.shop.getComputerByName(cbName.getSelectedItem().toString());
         computer.setInventory(computer.getInventory() + Integer.parseInt(number.getText()));
     }

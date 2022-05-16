@@ -1,15 +1,15 @@
 package view;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JCheckBox;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.CloseAndOpenMain;
 import controller.NewKeyboardController;
 import model.Shop;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JCheckBox;
-import javax.swing.JButton;
 
 public class NewKeyboard extends JFrame {
 
@@ -19,7 +19,9 @@ public class NewKeyboard extends JFrame {
     private JTextField tfInventory;
 
     public NewKeyboard(Shop shop) {
+        setTitle("Nouveau clavier");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 200, 479);
         contentPane = new JPanel();

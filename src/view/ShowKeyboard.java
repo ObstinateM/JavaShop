@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.AddKeyboardStock;
+import controller.CloseAndOpenEditKeyboard;
 import controller.CloseAndOpenMain;
 import controller.RefreshDataShowKeyboard;
 import model.Keyboard;
@@ -21,9 +22,12 @@ public class ShowKeyboard extends JFrame {
     private JTextField tfNumberToAdd;
 
     public ShowKeyboard(Shop shop) {
+        setTitle("Clavier");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 240, 350);
+
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -82,7 +86,7 @@ public class ShowKeyboard extends JFrame {
         contentPane.add(btnAdd);
 
         JButton btnCancel = new JButton("Fermer");
-        btnCancel.setBounds(51, 274, 117, 29);
+        btnCancel.setBounds(117, 274, 117, 29);
         btnCancel.addActionListener(new CloseAndOpenMain(this, shop));
         contentPane.add(btnCancel);
 
@@ -92,7 +96,9 @@ public class ShowKeyboard extends JFrame {
                 lblInventory, lblPrice, lblMechanical, lblRGB, lblKeypad, lblWireless, cbName));
         contentPane.add(btnRefresh);
 
-        new RefreshDataShowKeyboard(shop, keyboard, lblNumberSell, lblInventory, lblPrice,
-                lblMechanical, lblRGB, lblKeypad, lblWireless, cbName);
+        JButton btnEdit = new JButton("Modifier");
+        btnEdit.setBounds(16, 274, 96, 29);
+        btnEdit.addActionListener(new CloseAndOpenEditKeyboard(this, shop, cbName, keyboard));
+        contentPane.add(btnEdit);
     }
 }
