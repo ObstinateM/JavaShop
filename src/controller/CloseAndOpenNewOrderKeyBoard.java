@@ -2,22 +2,29 @@ package controller;
 
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+
+import model.OrderList;
 import model.Shop;
-import view.NewOrderKeyBoard;
+import view.NewOrderComputer;
+
+import view.NewOrderKeyboard;
+
 import java.awt.event.ActionEvent;
 
-public class CloseAndOpenNewOrderKeyBoard implements ActionListener {
+public class CloseAndOpenNewOrderKeyboard implements ActionListener {
     private JFrame frame;
     private Shop s;
+    private OrderList orderList;
 
-    public CloseAndOpenNewOrderKeyBoard(JFrame f, Shop s) {
+    public CloseAndOpenNewOrderKeyboard(JFrame f, Shop s, OrderList orderList) {
         this.frame = f;
         this.s = s;
+        this.orderList = orderList;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         frame.dispose();
-        new NewOrderKeyBoard(this.s);
+        new NewOrderKeyboard(this.s, orderList);
     }
 }

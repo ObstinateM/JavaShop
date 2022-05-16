@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Component;
+import java.awt.Container;
 import java.util.ArrayList;
 
 public class Shop {
@@ -12,8 +13,8 @@ public class Shop {
     private ArrayList<Keyboard> keyboardList = new ArrayList<Keyboard>();
     private ArrayList<Screen> screenList = new ArrayList<Screen>();
     private ArrayList<Employee> employeeList = new ArrayList<Employee>();
-    private ArrayList<Order> orderList = new ArrayList<Order>();
     private ArrayList<Customer> customerList = new ArrayList<Customer>();
+    private ArrayList<OrderList> orderList = new ArrayList<OrderList>();
 
     public Shop(String name, String password, String address) {
         this.address = address;
@@ -71,7 +72,7 @@ public class Shop {
         return this.computerList;
     }
 
-    public ArrayList<Keyboard> getKeyboardList() {
+    public ArrayList<Keyboard> getKeyBoardList() {
         return this.keyboardList;
     }
 
@@ -81,10 +82,6 @@ public class Shop {
 
     public ArrayList<Employee> getEmployeeList() {
         return this.employeeList;
-    }
-
-    public ArrayList<Order> getOrderList() {
-        return this.orderList;
     }
 
     public ArrayList<Customer> getCustomerList() {
@@ -170,12 +167,20 @@ public class Shop {
         return null;
     }
 
+    // get customer by Id
+    public Customer getCustomerById(int id) {
+        for (Customer customer : customerList) {
+            if (customer.getId() == id) {
+                return customer;
+            }
+        }
+        return null;
+    }
+
     // return Employe with by lastname
     public Employee getEmployeeByFirstName(String FirstName) {
 
         for (Employee e : employeeList) {
-            // System.out.println("Employé rentré :" + FirstName);
-            // System.out.println("Employé choisis :" + e.getFirstName());
             if (e.getFirstName().equals(FirstName)) {
 
                 return e;
@@ -186,59 +191,23 @@ public class Shop {
     }
 
     // methode for Order
-    public String getAllOrdersAsString() {
+    public String getAllOrderAsString(OrderList orderList) {
         String result = "";
-        for (Order o : orderList) {
-            // get all article in Order
-            for (Article a : o.getArticlesList()) {
-                result += "Name :" + o.getOrderName() + " - " + o.getId() + " :\n" + "    " + a.getName() + " - "
-                        + a.getPrice() + "€ - " + o.getQuantity() + "\n";
-
-            }
+        for (Article order : orderList.getOrderList()) {
+            result += "Nom : " + order.getName() + " | " + "Quantité : " + order.getNumberOfSell()
+                    + " | " + "Prix : " + String.format("%.02f", order.getPrice()) + " €" + "\n";
 
         }
         return result;
-
     }
 
-    // get all computer in order
-    public ArrayList<Computer> getAllComputerOrder() {
-        ArrayList<Computer> computerList = new ArrayList<Computer>();
-        for (Order o : orderList) {
-            for (Article a : o.getArticlesList()) {
-                if (a instanceof Computer) {
-                    computerList.add((Computer) a);
-                }
-            }
-        }
-        return computerList;
+    // get listOrder
+    public ArrayList<OrderList> getAllOrderList() {
+        return this.orderList;
     }
 
-    // get all keyboard in order
-
-    public ArrayList<Keyboard> getAllKeyboardOrder() {
-        ArrayList<Keyboard> keyboardList = new ArrayList<Keyboard>();
-        for (Order o : orderList) {
-            for (Article a : o.getArticlesList()) {
-                if (a instanceof Keyboard) {
-                    keyboardList.add((Keyboard) a);
-                }
-            }
-        }
-        return keyboardList;
-    }
-    // get all screen in order
-
-    public ArrayList<Screen> getAllScreenOrder() {
-        ArrayList<Screen> screenList = new ArrayList<Screen>();
-        for (Order o : orderList) {
-            for (Article a : o.getArticlesList()) {
-                if (a instanceof Screen) {
-                    screenList.add((Screen) a);
-                }
-            }
-        }
-        return screenList;
+    public void addOrderList(OrderList orderList) {
+        this.orderList.add(orderList);
     }
 
     public void addComputer(Computer computer) {
@@ -251,10 +220,6 @@ public class Shop {
 
     public void addScreen(Screen screen) {
         screenList.add(screen);
-    }
-
-    public void addOrder(Order order) {
-        orderList.add(order);
     }
 
     public void addCustomer(Customer customer) {
@@ -277,20 +242,12 @@ public class Shop {
         screenList.remove(screen);
     }
 
-    public void removeOrder(Order order) {
-        orderList.remove(order);
-    }
-
     public void removeCustomer(Customer customer) {
         customerList.remove(customer);
     }
 
     public void removeEmployee(Employee employee) {
         employeeList.remove(employee);
-    }
-
-    public Component getComputerOrderList() {
-        return null;
     }
 
 }

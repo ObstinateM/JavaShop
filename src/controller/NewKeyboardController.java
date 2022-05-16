@@ -45,7 +45,7 @@ public class NewKeyboardController implements ActionListener {
             int min = 100;
             int max = 999;
             int id = (int) Math.floor(Math.random() * (max - min + 1) + min);
-            shop.getKeyboardList()
+            shop.getKeyBoardList()
                     .add(new Keyboard(id, tfName.getText(), Double.parseDouble(tfPrice.getText()),
                             Integer.parseInt(tfInventory.getText()), 0, tfIsMechanical.isSelected(),
                             tfIsRGB.isSelected(), tfIsWireless.isSelected(),

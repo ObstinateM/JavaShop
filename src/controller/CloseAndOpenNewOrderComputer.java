@@ -2,6 +2,8 @@ package controller;
 
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+
+import model.OrderList;
 import model.Shop;
 import view.NewOrderComputer;
 import java.awt.event.ActionEvent;
@@ -9,15 +11,17 @@ import java.awt.event.ActionEvent;
 public class CloseAndOpenNewOrderComputer implements ActionListener {
     private JFrame frame;
     private Shop s;
+    private OrderList orderList;
 
-    public CloseAndOpenNewOrderComputer(JFrame f, Shop s) {
+    public CloseAndOpenNewOrderComputer(JFrame f, Shop s, OrderList orderList) {
         this.frame = f;
         this.s = s;
+        this.orderList = orderList;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         frame.dispose();
-        new NewOrderComputer(this.s);
+        new NewOrderComputer(this.s, orderList);
     }
 }
