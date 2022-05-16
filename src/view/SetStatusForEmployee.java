@@ -1,15 +1,21 @@
 package view;
 
-import java.awt.*;
-import javax.swing.*;
-
-import controller.*;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import controller.CloseAndOpenMain;
+import controller.CloseAndOpenNewEmployeeWindow;
+import controller.SetEmployeeStatusController;
 import model.Shop;
 
 public class SetStatusForEmployee extends JFrame {
 
     private JTextField tfLastname;
-    // private JTextField tfFirstName;
 
     private JPanel p = new JPanel();
     String[] optionsToChoose = {"EN PAUSE", "TRAVAILLE..", "A FINIS", "VIRE !"};
@@ -51,7 +57,7 @@ public class SetStatusForEmployee extends JFrame {
         p.add(tfLastname);
         tfLastname.setColumns(10);
 
-        JComboBox<String> jComboBox = new JComboBox<>(optionsToChoose);
+        JComboBox<String> jComboBox = new JComboBox<String>(optionsToChoose);
         jComboBox.setBounds(100, 210, 300, 25);
         p.add(jComboBox);
 

@@ -1,7 +1,8 @@
 package view;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class ShopWindow extends JFrame {
 
@@ -18,9 +19,5 @@ public class ShopWindow extends JFrame {
         setBounds(500, 500, 800, 400);
         setResizable(false);
         setVisible(true);
-    }
-
-    public Object getPassword() {
-        return null;
     }
 }

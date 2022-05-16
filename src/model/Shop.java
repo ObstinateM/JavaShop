@@ -14,7 +14,6 @@ public class Shop {
     private ArrayList<Order> orderList = new ArrayList<Order>();
     private ArrayList<Customer> customerList = new ArrayList<Customer>();
 
-
     public Shop(String name, String password, String address) {
         this.address = address;
         this.name = name;
@@ -126,10 +125,14 @@ public class Shop {
     public String getAllEmployeeAsString() {
         String result = "";
         for (Employee e : employeeList) {
-
-            result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : "
-                    + e.getId() + " Sexe : " + e.getSex() + " Date de naissance : " + e.getDob()
-                    + " Statut : " + e.getStatus() + "\n";
+            // result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : "
+            // + e.getId() + " Sexe : " + e.getSex() + " Date de naissance : " + e.getDob()
+            // + " Statut : " + e.getStatus() + "\n";
+            result += e.getFirstName() + " " + e.getLastName() + "\n";
+            result += "    Id : " + e.getId() + "\n";
+            result += "    Sexe : " + e.getSex() + "\n";
+            result += "    Date de naissance : " + e.getDob() + "\n";
+            result += "    Statut : " + e.getStatus() + "\n\n";
         }
         return result;
     }
@@ -170,34 +173,23 @@ public class Shop {
         return null;
     }
 
-    // return Employe with by lastname
     public Employee getEmployeeByFirstName(String FirstName) {
-
         for (Employee e : employeeList) {
-            // System.out.println("Employé rentré :" + FirstName);
-            // System.out.println("Employé choisis :" + e.getFirstName());
             if (e.getFirstName().equals(FirstName)) {
-
                 return e;
             }
         }
-
         return null;
     }
 
-    // methode for Order
     public String getAllOrdersAsString() {
         String result = "";
         for (Order o : orderList) {
-            // get all article in Order
             for (Article a : o.getArticlesList()) {
-                result += "Name :" + o.getOrderName() + " - " + o.getId() + " :\n" + "    " + a.getName() + " - "
-                        + a.getPrice() + "€ - " + o.getQuantity() + "\n";
-
+                result += "Name :" + o.getOrderName() + " - " + o.getId() + " :\n" + "    "
+                        + a.getName() + " - " + a.getPrice() + "€ - " + o.getQuantity() + "\n";
             }
-
         }
         return result;
-
     }
 }

@@ -1,5 +1,10 @@
 package view;
 
+import javax.swing.JLabel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -8,11 +13,6 @@ import controller.CloseAndOpenMain;
 import controller.RefreshDataShowComputer;
 import model.Computer;
 import model.Shop;
-import javax.swing.JLabel;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JTextField;
 
 public class ShowComputer extends JFrame {
 

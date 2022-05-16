@@ -1,15 +1,15 @@
 package view;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JCheckBox;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.CloseAndOpenMain;
 import controller.NewKeyboardController;
 import model.Shop;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JCheckBox;
-import javax.swing.JButton;
 
 public class NewKeyboard extends JFrame {
 
