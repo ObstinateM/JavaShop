@@ -9,6 +9,7 @@ import model.Employee;
 import model.Shop;
 import view.MainInterface;
 import java.awt.event.ActionEvent;
+import utils.Date;
 
 public class NewEmployeeController implements ActionListener {
 
@@ -34,6 +35,8 @@ public class NewEmployeeController implements ActionListener {
         if (tfFirstName.getText().isEmpty() || tfLastName.getText().isEmpty()
                 || dob.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs");
+        } else if (!Date.validateDate(dob.getText())) {
+            JOptionPane.showMessageDialog(null, "Veuillez entrer une date valide");
         } else {
             int sexNumber = jComboBox.getSelectedIndex() + 1;
             String sexString = sexNumber == 1 ? "HOMME" : "FEMME";
