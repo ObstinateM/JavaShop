@@ -191,13 +191,12 @@ public class Shop {
         for (Order o : orderList) {
             // get all article in Order
             for (Article a : o.getArticlesList()) {
-                result += "Name :" + o.getOrderName() + " - " + o.getId() + " :\n" + "    " + a.getName() + " - "
-                        + a.getPrice() + "€ - " + o.getQuantity() + "\n";
+                result += "Name :" + o.getOrderName() + " - " + o.getId() + " :\n" + "    "
+                        + a.getName() + " - " + a.getPrice() + "€ - " + o.getQuantity() + "\n";
 
             }
 
         }
         return result;
-
     }
 }
