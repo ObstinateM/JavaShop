@@ -19,15 +19,31 @@ public class Keyboard extends Article {
         return isMechanical;
     }
 
+    public void setMechanical(boolean isMechanical) {
+        this.isMechanical = isMechanical;
+    }
+
     public boolean isRGB() {
         return isRGB;
+    }
+
+    public void setRGB(boolean isRGB) {
+        this.isRGB = isRGB;
     }
 
     public boolean isWireless() {
         return isWireless;
     }
 
+    public void setWireless(boolean isWireless) {
+        this.isWireless = isWireless;
+    }
+
     public boolean hasKeypad() {
         return hasKeypad;
+    }
+
+    public void setKeypad(boolean hasKeypad) {
+        this.hasKeypad = hasKeypad;
     }
 }

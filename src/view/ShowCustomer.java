@@ -59,7 +59,7 @@ public class ShowCustomer extends JFrame {
         contentPane.add(lblDiscount);
 
         JButton btnClose = new JButton("Fermer");
-        btnClose.setBounds(68, 237, 117, 29);
+        btnClose.setBounds(138, 237, 117, 29);
         btnClose.addActionListener(new CloseAndOpenMain(this, shop));
         contentPane.add(btnClose);
 
@@ -74,5 +74,9 @@ public class ShowCustomer extends JFrame {
         btnRefresh.addActionListener(new RefreshDataShowCustomer(shop, customer, comboBox, lblDob,
                 lblSex, lblId, lblFidelityPts, lblDiscount, btnClaim));
         contentPane.add(btnRefresh);
+
+        JButton btnEdit = new JButton("Modifier");
+        btnEdit.setBounds(12, 237, 117, 29);
+        contentPane.add(btnEdit);
     }
 }
