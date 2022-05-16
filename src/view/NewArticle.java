@@ -18,7 +18,7 @@ public class NewArticle extends JFrame {
     public NewArticle(Shop s) {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(500, 500, 453, 215);
+        setBounds(100, 100, 453, 215);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);

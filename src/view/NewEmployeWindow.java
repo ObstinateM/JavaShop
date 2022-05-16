@@ -28,7 +28,7 @@ public class NewEmployeWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(400, 300, 500, 600);
+        setBounds(100, 100, 500, 600);
 
         setVisible(true);
 

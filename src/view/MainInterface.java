@@ -33,7 +33,7 @@ public class MainInterface extends JFrame {
     public MainInterface(Shop s) {
         setTitle("Gestion du magasin");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(400, 400, 900, 500);
+        setBounds(100, 100, 900, 500);
         p.setBorder(new EmptyBorder(5, 5, 5, 5));
         p.setLayout(null);
         setContentPane(p);

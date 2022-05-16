@@ -25,7 +25,7 @@ public class SetStatusForEmployee extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(500, 400, 500, 600);
+        setBounds(100, 100, 500, 600);
         setVisible(true);
         // label
         JLabel welcome = new JLabel("Pointez votre status :");

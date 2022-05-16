@@ -21,7 +21,7 @@ public class ResetPassword extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(600, 600, 300, 100);
+        setBounds(100, 100, 300, 100);
         setResizable(false);
         setVisible(true);
 

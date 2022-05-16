@@ -17,7 +17,7 @@ public class ListEmployeeWindow extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(500, 500, 700, 400);
+        setBounds(100, 100, 700, 400);
 
         setVisible(true);
         // label

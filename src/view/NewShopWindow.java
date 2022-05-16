@@ -26,7 +26,7 @@ public class NewShopWindow extends JFrame {
         p.setBackground(Color.LIGHT_GRAY);
         p.setLayout(null);
         setContentPane(p);
-        setBounds(500, 500, 500, 400);
+        setBounds(100, 100, 500, 400);
         setResizable(false);
         setVisible(true);
 
