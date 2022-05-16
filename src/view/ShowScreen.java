@@ -21,7 +21,9 @@ public class ShowScreen extends JFrame {
     private Screen screen;
 
     public ShowScreen(Shop shop) {
+        setTitle("Ecran");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 210, 310);
 

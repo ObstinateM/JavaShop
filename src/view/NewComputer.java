@@ -21,6 +21,7 @@ public class NewComputer extends JFrame {
     private JTextField tfHDD;
 
     public NewComputer(Shop shop) {
+        setTitle("Nouvel ordinateur");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 200, 563);
@@ -28,6 +29,7 @@ public class NewComputer extends JFrame {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+        setResizable(false);
 
         JLabel lblTitle = new JLabel("Ajouter un ordinateur");
         lblTitle.setBounds(28, 20, 142, 16);

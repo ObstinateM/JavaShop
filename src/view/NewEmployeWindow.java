@@ -24,11 +24,12 @@ public class NewEmployeWindow extends JFrame {
     String[] optionsToChoose = {"Homme", "Femme"};
 
     public NewEmployeWindow(Shop s) {
-        setTitle("Ajouter un employé");
+        setTitle("Nouvel employé");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
         setBounds(100, 100, 500, 600);
+        setResizable(false);
 
         setVisible(true);
 

@@ -24,11 +24,12 @@ public class NewCustomer extends JFrame {
     String[] optionsToChoose = {"Homme", "Femme"};
 
     public NewCustomer(Shop s) {
-        setTitle("Ajouter un client");
+        setTitle("Nouveau client");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
         setContentPane(p);
         setBounds(100, 100, 500, 600);
+        setResizable(false);
 
         setVisible(true);
 

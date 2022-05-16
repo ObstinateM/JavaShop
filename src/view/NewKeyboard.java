@@ -19,7 +19,9 @@ public class NewKeyboard extends JFrame {
     private JTextField tfInventory;
 
     public NewKeyboard(Shop shop) {
+        setTitle("Nouveau clavier");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 200, 479);
         contentPane = new JPanel();

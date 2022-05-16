@@ -27,14 +27,14 @@ public class SetStatusForEmployee extends JFrame {
         setContentPane(p);
         setBounds(100, 100, 500, 600);
         setVisible(true);
-        // label
+        setResizable(false);
+
         JLabel welcome = new JLabel("Pointez votre status :");
         welcome.setFont(new Font("Verdana", Font.PLAIN, 18));
         welcome.setBounds(0, 10, 250, 25);
         welcome.setLayout(null);
         p.add(welcome);
 
-        // label for first and last name
         JLabel labelFirstName = new JLabel("Prénom :");
         labelFirstName.setFont(new Font("Verdana", Font.PLAIN, 14));
         labelFirstName.setBounds(100, 120, 100, 25);

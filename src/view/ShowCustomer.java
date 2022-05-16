@@ -19,7 +19,9 @@ public class ShowCustomer extends JFrame {
     private Customer customer;
 
     public ShowCustomer(Shop shop) {
+        setTitle("Fiche client");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 270, 300);
 

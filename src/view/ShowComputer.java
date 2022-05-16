@@ -21,7 +21,9 @@ public class ShowComputer extends JFrame {
     private Computer computer;
 
     public ShowComputer(Shop shop) {
+        setTitle("Ordinateur");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 210, 300);
         contentPane = new JPanel();

@@ -19,6 +19,7 @@ public class ListEmployeeWindow extends JFrame {
         setContentPane(p);
         setBounds(100, 100, 700, 400);
 
+        setResizable(false);
         setVisible(true);
         // label
         JLabel labelWelcome1 = new JLabel("Voici la liste de tout vos employes : ");

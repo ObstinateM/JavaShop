@@ -16,7 +16,9 @@ public class ShowArticle extends JFrame {
     private JPanel contentPane;
 
     public ShowArticle(Shop s) {
+        setTitle("Article");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 453, 215);
         contentPane = new JPanel();

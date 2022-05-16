@@ -22,6 +22,8 @@ public class NewScreen extends JFrame {
     private JTextField tfResponseTime;
 
     public NewScreen(Shop shop) {
+        setTitle("Nouvel écran");
+        setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 230, 610);

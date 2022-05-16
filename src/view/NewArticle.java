@@ -16,6 +16,7 @@ public class NewArticle extends JFrame {
     private JPanel contentPane;
 
     public NewArticle(Shop s) {
+        setTitle("Nouvel article");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 453, 215);
@@ -23,6 +24,7 @@ public class NewArticle extends JFrame {
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+        setResizable(false);
 
         JLabel lblArticleType = new JLabel("Quel type d'article voulez vous ajouter ?");
         lblArticleType.setBounds(101, 38, 260, 16);

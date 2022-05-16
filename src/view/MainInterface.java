@@ -39,6 +39,7 @@ public class MainInterface extends JFrame {
         setContentPane(p);
         Border lineborder = BorderFactory.createLineBorder(Color.black, 1);
         setVisible(true);
+        setResizable(false);
 
         // HEADER //
 
