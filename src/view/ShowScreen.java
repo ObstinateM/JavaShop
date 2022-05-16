@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.AddScreenStock;
+import controller.CloseAndOpenEditScreen;
 import controller.CloseAndOpenMain;
 import controller.RefreshDataShowScreen;
 import model.Screen;
@@ -86,7 +87,7 @@ public class ShowScreen extends JFrame {
         contentPane.add(btnAddInventory);
 
         JButton btnClose = new JButton("Fermer");
-        btnClose.setBounds(43, 244, 117, 29);
+        btnClose.setBounds(91, 247, 117, 29);
         btnClose.addActionListener(new CloseAndOpenMain(this, shop));
         contentPane.add(btnClose);
 
@@ -95,6 +96,11 @@ public class ShowScreen extends JFrame {
         btnRefresh.addActionListener(new RefreshDataShowScreen(shop, screen, lblPrice, lblInventory,
                 lblNumberOfSell, lblWidth, lblHeight, lblResponseTime, lblRefreshRate, comboBox));
         contentPane.add(btnRefresh);
+
+        JButton btnEdit = new JButton("Modifier");
+        btnEdit.setBounds(2, 247, 88, 29);
+        btnEdit.addActionListener(new CloseAndOpenEditScreen(this, shop, comboBox, screen));
+        contentPane.add(btnEdit);
     }
 
 }

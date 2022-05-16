@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import controller.AddComputerStock;
+import controller.CloseAndOpenEditComputer;
 import controller.CloseAndOpenMain;
 import controller.RefreshDataShowComputer;
 import model.Computer;
@@ -80,7 +81,7 @@ public class ShowComputer extends JFrame {
         contentPane.add(btnAddInventory);
 
         JButton btnClose = new JButton("Fermer");
-        btnClose.setBounds(38, 230, 117, 29);
+        btnClose.setBounds(87, 230, 117, 29);
         btnClose.addActionListener(new CloseAndOpenMain(this, shop));
         contentPane.add(btnClose);
 
@@ -89,5 +90,10 @@ public class ShowComputer extends JFrame {
         btnRefresh.addActionListener(new RefreshDataShowComputer(shop, computer, lblPrice,
                 lblInventory, lblNumberOfSell, lblProc, lblHDD, lblRam, comboBox));
         contentPane.add(btnRefresh);
+
+        JButton btnEdit = new JButton("Modfier");
+        btnEdit.setBounds(0, 230, 88, 29);
+        btnEdit.addActionListener(new CloseAndOpenEditComputer(this, shop, comboBox, computer));
+        contentPane.add(btnEdit);
     }
 }
