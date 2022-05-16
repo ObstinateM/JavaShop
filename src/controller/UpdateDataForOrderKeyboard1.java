@@ -35,7 +35,7 @@ public class UpdateDataForOrderKeyboard1 implements ActionListener {
         String newSelection = (String) cb.getSelectedItem();
         int value = Integer.parseInt(newSelection);
         totalPrice.setText(""
-                + value * shop.getKeyBoardList().get(comboBox.getSelectedIndex()).getPrice() + "€");
+                + value * shop.getKeyboardList().get(comboBox.getSelectedIndex()).getPrice() + "€");
     }
 
 }

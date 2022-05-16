@@ -38,11 +38,11 @@ public class UpdateDataForOrderKeyboard2 implements ActionListener {
 
                 totalPrice.setText(""
                                 + (numberOf.getSelectedIndex() + 1)
-                                                * shop.getKeyBoardList().get(comboBox.getSelectedIndex()).getPrice()
+                                                * shop.getKeyboardList().get(comboBox.getSelectedIndex()).getPrice()
                                 + "€");
                 unityPrice.setText(
                                 "Prix par article : " +
-                                                shop.getKeyBoardList().get(cb.getSelectedIndex()).getPrice() + "€");
+                                                shop.getKeyboardList().get(cb.getSelectedIndex()).getPrice() + "€");
 
         }
 

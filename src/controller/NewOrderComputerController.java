@@ -4,9 +4,6 @@ import model.Computer;
 import model.OrderList;
 import model.Shop;
 import view.NewOrder;
-import view.NewOrderKeyBoard;
-
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -35,11 +32,6 @@ public class NewOrderComputerController implements ActionListener {
         this.proc = proc;
         this.ram = ram;
         this.hdd = hdd;
-    }
-
-    public NewOrderComputerController(JComboBox<String> comboBox2, JComboBox comboBoxNumber, JLabel totalPrice2,
-            NewOrderKeyBoard newOrderKeyBoard, Shop shop2, OrderList orderList2, JCheckBox isMechanical,
-            JCheckBox isRGB, JCheckBox isWireless, JCheckBox hasKeypad) {
     }
 
     @Override

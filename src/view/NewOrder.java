@@ -9,9 +9,13 @@ import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
 import model.OrderList;
 import controller.CloseAndOpenMain;
+import controller.CloseAndOpenMainWithNewOrder;
 import controller.CloseAndOpenNewComputer;
 import controller.CloseAndOpenNewKeyboard;
 import controller.CloseAndOpenNewScreen;
+import controller.CloseAndOpenNewOrderComputer;
+import controller.CloseAndOpenNewOrderKeyboard;
+import controller.CloseAndOpenNewOrderScreen;
 import model.Shop;
 
 public class NewOrder extends JFrame {

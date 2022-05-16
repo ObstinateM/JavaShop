@@ -72,7 +72,7 @@ public class Shop {
         return this.computerList;
     }
 
-    public ArrayList<Keyboard> getKeyBoardList() {
+    public ArrayList<Keyboard> getKeyboardList() {
         return this.keyboardList;
     }
 
@@ -115,7 +115,7 @@ public class Shop {
     public String getAllEmployeeStatus() {
         String result = "";
         for (Employee e : employeeList) {
-            result += " ID : " + e.getId() + " - " + e.getStatus() + "\n";
+            result += "ID :" + e.getId() + " - " + e.getStatus() + "\n";
         }
         return result;
     }
@@ -123,11 +123,10 @@ public class Shop {
     public String getAllEmployeeAsString() {
         String result = "";
         for (Employee e : employeeList) {
-            result += e.getFirstName() + " " + e.getLastName() + "\n";
-            result += "    Id : " + e.getId() + "\n";
-            result += "    Sexe : " + e.getSex() + "\n";
-            result += "    Date de naissance : " + e.getDob() + "\n";
-            result += "    Statut : " + e.getStatus() + "\n\n";
+
+            result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : "
+                    + e.getId() + " Sexe : " + e.getSex() + " Date de naissance : " + e.getDob()
+                    + " Statut : " + e.getStatus() + "\n";
         }
         return result;
     }
@@ -168,6 +167,7 @@ public class Shop {
         return null;
     }
 
+    // get customer by Id
     public Customer getCustomerById(int id) {
         for (Customer customer : customerList) {
             if (customer.getId() == id) {
@@ -177,16 +177,19 @@ public class Shop {
         return null;
     }
 
+    // return Employe with by lastname
     public Employee getEmployeeByFirstName(String FirstName) {
+
         for (Employee e : employeeList) {
             if (e.getFirstName().equals(FirstName)) {
                 return e;
             }
         }
+
         return null;
     }
 
-
+    // methode for Order
     public String getAllOrderAsString(OrderList orderList) {
         String result = "";
         for (Article order : orderList.getOrderList()) {
@@ -197,6 +200,7 @@ public class Shop {
         return result;
     }
 
+    // get listOrder
     public ArrayList<OrderList> getAllOrderList() {
         return this.orderList;
     }

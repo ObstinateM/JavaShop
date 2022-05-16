@@ -1,30 +1,20 @@
 package controller;
 
-import java.awt.event.ActionListener;
 import javax.swing.JFrame;
-
 import model.OrderList;
 import model.Shop;
-import view.NewOrderComputer;
-
 import view.NewOrderKeyboard;
 
-import java.awt.event.ActionEvent;
-
-public class CloseAndOpenNewOrderKeyboard implements ActionListener {
-    private JFrame frame;
-    private Shop s;
+public class CloseAndOpenNewOrderKeyboard extends CloseAndOpen {
     private OrderList orderList;
 
     public CloseAndOpenNewOrderKeyboard(JFrame f, Shop s, OrderList orderList) {
-        this.frame = f;
-        this.s = s;
+        super(f, s);
         this.orderList = orderList;
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        frame.dispose();
-        new NewOrderKeyboard(this.s, orderList);
+    public void open(Shop shop) {
+        new NewOrderKeyboard(shop, orderList);
     }
 }

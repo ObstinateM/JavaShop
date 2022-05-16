@@ -1,21 +1,14 @@
 package controller;
 
-import model.Computer;
 import model.Keyboard;
-import model.Order;
 import model.OrderList;
 import model.Shop;
-import view.MainInterface;
 import view.NewOrder;
-
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import java.awt.event.ActionListener;
-import java.awt.Component;
 import java.awt.event.ActionEvent;
 
 public class NewOrderKeyboardController implements ActionListener {
