@@ -1,11 +1,28 @@
 package view;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextPane;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import model.*;
-import controller.*;
+import controller.CloseAndOpenListEmployee;
+import controller.CloseAndOpenNewArticle;
+import controller.CloseAndOpenNewCustomer;
+import controller.CloseAndOpenNewEmployeeWindow;
+import controller.CloseAndOpenNewOrder;
+import controller.CloseAndOpenSetEmployeeStatus;
+import controller.CloseAndOpenShowArticle;
+import controller.CloseAndOpenShowCustomer;
+import model.Shop;
 
 public class MainInterface extends JFrame {
 
@@ -16,34 +33,35 @@ public class MainInterface extends JFrame {
     public MainInterface(Shop s) {
         setTitle("Gestion du magasin");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(400, 400, 900, 500);
+        setBounds(100, 100, 900, 500);
         p.setBorder(new EmptyBorder(5, 5, 5, 5));
         p.setLayout(null);
         setContentPane(p);
         Border lineborder = BorderFactory.createLineBorder(Color.black, 1);
         setVisible(true);
+        setResizable(false);
+
         // HEADER //
-        // HEADER //
-        // HEADER //
+
         JPanel header = new JPanel();
         header.setBounds(0, 0, 700, 50);
         header.setBackground(Color.decode("#696969"));
         header.setLayout(null);
         p.add(header);
         header.setBorder(lineborder);
-        JLabel labelShop = new JLabel("Nom du magasin : " + s.getName());
 
+        JLabel labelShop = new JLabel("Nom du magasin : " + s.getName());
         labelShop.setFont(new Font("Verdana", Font.PLAIN, 20));
         labelShop.setBounds(10, -3, 300, 50);
         header.add(labelShop);
-        JLabel labelAddress = new JLabel("Adresse : " + s.getAddress());
 
+        JLabel labelAddress = new JLabel("Adresse : " + s.getAddress());
         labelAddress.setFont(new Font("Verdana", Font.PLAIN, 15));
         labelAddress.setBounds(10, 15, 300, 50);
         header.add(labelAddress);
+
         // RIGHT SIDE //
-        // RIGHT SIDE //
-        // RIGHT SIDE //
+
         JPanel rightSide = new JPanel();
         rightSide.setBounds(700, 0, 200, 500);
         rightSide.setBackground(Color.decode("#696969"));
@@ -62,13 +80,12 @@ public class MainInterface extends JFrame {
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnNewArticle);
 
-        // button for define the status of an employee
-        JButton btnSetStatus = new JButton("Pointage d'employé");
+        JButton btnSetStatus = new JButton("Pointage employé");
         btnSetStatus.setBounds(20, 130, 150, 20);
         btnSetStatus.addActionListener(new CloseAndOpenSetEmployeeStatus(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnSetStatus);
-        // display list employ with data
+
         JButton btnListEmployee = new JButton("Liste des employés");
         btnListEmployee.setBounds(20, 170, 150, 20);
         btnListEmployee.addActionListener(new CloseAndOpenListEmployee(this, s));
@@ -100,8 +117,7 @@ public class MainInterface extends JFrame {
         rightSide.add(btnOrder);
 
         // MIDLE //
-        // MIDLE //
-        // MIDLE //
+
         JPanel middle = new JPanel();
         middle.setBounds(0, 50, 700, 450);
         middle.setLayout(null);
@@ -142,6 +158,5 @@ public class MainInterface extends JFrame {
         scrollPaneStatus.setBounds(15, 50, 200, 300);
         scrollPaneStatus.setBorder(lineborder);
         middle.add(scrollPaneStatus);
-
     }
 }

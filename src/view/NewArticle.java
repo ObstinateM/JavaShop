@@ -1,29 +1,30 @@
 package view;
 
+import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import controller.CloseAndOpenMain;
 import controller.CloseAndOpenNewComputer;
 import controller.CloseAndOpenNewKeyboard;
 import controller.CloseAndOpenNewScreen;
 import model.Shop;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.*;
-import controller.*;
 
 public class NewArticle extends JFrame {
     private JPanel contentPane;
 
     public NewArticle(Shop s) {
+        setTitle("Nouvel article");
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(500, 500, 453, 215);
+        setBounds(100, 100, 453, 215);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
+        setResizable(false);
 
         JLabel lblArticleType = new JLabel("Quel type d'article voulez vous ajouter ?");
         lblArticleType.setBounds(101, 38, 260, 16);
@@ -44,7 +45,6 @@ public class NewArticle extends JFrame {
         btnAddKeyboard.addActionListener(new CloseAndOpenNewKeyboard(this, s));
         contentPane.add(btnAddKeyboard);
 
-        // Back au menu principal
         JButton btnBack = new JButton("Retour");
         btnBack.setBounds(167, 146, 117, 27);
         btnBack.setBackground(Color.decode("#C70039"));

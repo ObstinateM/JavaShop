@@ -1,5 +1,9 @@
 package view;
 
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -8,10 +12,6 @@ import controller.CloseAndOpenMain;
 import controller.RefreshDataShowCustomer;
 import model.Customer;
 import model.Shop;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 
 public class ShowCustomer extends JFrame {
 
@@ -19,9 +19,12 @@ public class ShowCustomer extends JFrame {
     private Customer customer;
 
     public ShowCustomer(Shop shop) {
+        setTitle("Fiche client");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 270, 300);
+
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);

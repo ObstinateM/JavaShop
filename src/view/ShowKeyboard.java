@@ -22,9 +22,12 @@ public class ShowKeyboard extends JFrame {
     private JTextField tfNumberToAdd;
 
     public ShowKeyboard(Shop shop) {
+        setTitle("Clavier");
         setVisible(true);
+        setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 240, 350);
+
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);

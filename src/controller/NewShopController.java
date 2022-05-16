@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import model.Shop;
+import utils.Regex;
 import view.LoginExist;
 import java.awt.event.ActionEvent;
 
@@ -29,16 +30,25 @@ public class NewShopController implements ActionListener {
         if (tfNameShop.getText().isEmpty() || tfAddress.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs", "Champ vide",
                     JOptionPane.ERROR_MESSAGE);
-        } else {
-            if (tfNameShop.getText().equals("") || tfAddress.getText().equals("")) {
-                JFrame a = new JFrame();
-                JOptionPane.showMessageDialog(a, "Nom incorrect", "Champ incorrect", 2);
-            } else {
-                this.shop = new Shop(tfNameShop.getText(), new String(tfPassword.getPassword()),
-                        tfAddress.getText());
-                frame.dispose();
-                new LoginExist(shop);
-            }
+            return;
         }
+
+        if (!Regex.validateName(tfNameShop.getText())) {
+            JOptionPane.showMessageDialog(null, "Veuillez entrer un nom valide", "Nom invalide",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!Regex.validateLettersAndNumbers(tfAddress.getText())) {
+            JOptionPane.showMessageDialog(null,
+                    "Veuillez entrer une adresse valide (Lettres et nombres seulement)",
+                    "Adresse invalide", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        this.shop = new Shop(tfNameShop.getText(), new String(tfPassword.getPassword()),
+                tfAddress.getText());
+        frame.dispose();
+        new LoginExist(shop);
     }
 }

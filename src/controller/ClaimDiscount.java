@@ -21,11 +21,13 @@ public class ClaimDiscount implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         customer = shop.getCustomerByName(cbName.getSelectedItem().toString());
+
         if (customer.canClaimDiscount()) {
             customer.claimDiscount();
             JOptionPane.showMessageDialog(null, "Coupon ajouté");
             return;
         }
+
         JOptionPane.showMessageDialog(null, "Vous ne pouvez pas réclamer de coupon");
     }
 }

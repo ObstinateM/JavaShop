@@ -1,18 +1,17 @@
 package view;
 
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.border.EmptyBorder;
-
+import controller.CloseAndOpenMain;
 import controller.CloseAndOpenNewComputer;
 import controller.CloseAndOpenNewKeyboard;
 import controller.CloseAndOpenNewScreen;
 import model.Shop;
-import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.*;
-import controller.*;
 
 public class NewOrder extends JFrame {
     private JPanel contentPane;
