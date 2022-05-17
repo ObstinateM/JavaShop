@@ -14,13 +14,13 @@ import javax.swing.JTextField;
 public class UpdateDataForOrderComputer1 implements ActionListener {
     private Shop shop;
     private JFrame frame;
-    private JComboBox numberOf;
-    private JComboBox comboBox;
+    private JComboBox<String> numberOf;
+    private JComboBox<String> comboBox;
     private JTextField orderName;
     private JLabel totalPrice;
 
-    public UpdateDataForOrderComputer1(JComboBox numberOf, JComboBox<String> comboBox, JLabel totalPrice, JFrame frame,
-            Shop shop) {
+    public UpdateDataForOrderComputer1(JComboBox numberOf, JComboBox<String> comboBox,
+            JLabel totalPrice, JFrame frame, Shop shop) {
         this.numberOf = numberOf;
         this.orderName = orderName;
         this.totalPrice = totalPrice;

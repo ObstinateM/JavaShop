@@ -1,7 +1,5 @@
 package model;
 
-import java.awt.Component;
-import java.awt.Container;
 import java.util.ArrayList;
 
 public class Shop {

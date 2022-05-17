@@ -14,15 +14,16 @@ public class NewOrderComputerController implements ActionListener {
     private Shop shop;
     private JFrame frame;
     private JComboBox<String> comboBox;
-    private JComboBox numberOf;
+    private JComboBox<String> numberOf;
     private JLabel totalPrice;
     private OrderList orderList;
     private JLabel proc;
     private JLabel ram;
     private JLabel hdd;
 
-    public NewOrderComputerController(JComboBox<String> comboBox, JComboBox numberOf,
-            JLabel totalPrice2, JFrame frame, Shop shop, OrderList orderlist, JLabel proc, JLabel ram, JLabel hdd) {
+    public NewOrderComputerController(JComboBox<String> comboBox, JComboBox<String> numberOf,
+            JLabel totalPrice2, JFrame frame, Shop shop, OrderList orderlist, JLabel proc,
+            JLabel ram, JLabel hdd) {
         this.comboBox = comboBox;
         this.numberOf = numberOf;
         this.totalPrice = totalPrice2;
@@ -36,10 +37,11 @@ public class NewOrderComputerController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Computer computer = new Computer((int) (Math.random() * 900) + 100, comboBox.getSelectedItem().toString(),
-                Double.parseDouble(totalPrice.getText().replace(" ", "").replace("€", "")), numberOf.getSelectedIndex(),
-                numberOf.getSelectedIndex(),
-                proc.getText(), Integer.parseInt(this.ram.getText()), Integer.parseInt(this.hdd.getText()));
+        Computer computer = new Computer((int) (Math.random() * 900) + 100,
+                comboBox.getSelectedItem().toString(),
+                Double.parseDouble(totalPrice.getText().replace(" ", "").replace("€", "")),
+                numberOf.getSelectedIndex(), numberOf.getSelectedIndex(), proc.getText(),
+                Integer.parseInt(this.ram.getText()), Integer.parseInt(this.hdd.getText()));
 
         this.orderList.addOrder(computer);
         frame.dispose();

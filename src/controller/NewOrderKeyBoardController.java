@@ -15,7 +15,7 @@ public class NewOrderKeyboardController implements ActionListener {
     private Shop shop;
     private JFrame frame;
     private JComboBox<String> comboBox;
-    private JComboBox numberOf;
+    private JComboBox<String> numberOf;
     private JLabel totalPrice;
     private OrderList orderList;
     private JCheckBox isMechanical;
@@ -23,9 +23,9 @@ public class NewOrderKeyboardController implements ActionListener {
     private JCheckBox isWireless;
     private JCheckBox hasKeypad;
 
-    public NewOrderKeyboardController(JComboBox<String> comboBox, JComboBox numberOf,
-            JLabel totalPrice2, JFrame frame, Shop shop, OrderList orderlist, JCheckBox isMechanical, JCheckBox isRGB,
-            JCheckBox isWireless, JCheckBox hasKeypad) {
+    public NewOrderKeyboardController(JComboBox<String> comboBox, JComboBox<String> numberOf,
+            JLabel totalPrice2, JFrame frame, Shop shop, OrderList orderlist,
+            JCheckBox isMechanical, JCheckBox isRGB, JCheckBox isWireless, JCheckBox hasKeypad) {
         this.comboBox = comboBox;
         this.numberOf = numberOf;
         this.totalPrice = totalPrice2;
@@ -40,10 +40,11 @@ public class NewOrderKeyboardController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Keyboard keyboard = new Keyboard((int) (Math.random() * 900) + 100, comboBox.getSelectedItem().toString(),
-                Double.parseDouble(totalPrice.getText().replace(" ", "").replace("€", "")), numberOf.getSelectedIndex(),
-                numberOf.getSelectedIndex(), isMechanical.isSelected(), isRGB.isSelected(), isWireless.isSelected(),
-                hasKeypad.isSelected());
+        Keyboard keyboard = new Keyboard((int) (Math.random() * 900) + 100,
+                comboBox.getSelectedItem().toString(),
+                Double.parseDouble(totalPrice.getText().replace(" ", "").replace("€", "")),
+                numberOf.getSelectedIndex(), numberOf.getSelectedIndex(), isMechanical.isSelected(),
+                isRGB.isSelected(), isWireless.isSelected(), hasKeypad.isSelected());
         this.orderList.addOrder(keyboard);
         frame.dispose();
         new NewOrder(shop, orderList);
