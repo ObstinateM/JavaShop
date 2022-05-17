@@ -115,7 +115,7 @@ public class Shop {
     public String getAllEmployeeStatus() {
         String result = "";
         for (Employee e : employeeList) {
-            result += "ID :" + e.getId() + " - " + e.getStatus() + "\n";
+            result += " ID : " + e.getId() + " - " + e.getStatus() + "\n";
         }
         return result;
     }
