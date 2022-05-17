@@ -123,10 +123,10 @@ public class Shop {
     public String getAllEmployeeAsString() {
         String result = "";
         for (Employee e : employeeList) {
-
-            result += "Prenom : " + e.getFirstName() + " Nom : " + e.getLastName() + " ID : "
-                    + e.getId() + " Sexe : " + e.getSex() + " Date de naissance : " + e.getDob()
-                    + " Statut : " + e.getStatus() + "\n";
+            result += e.getFirstName() + " " + e.getLastName() + "\n";
+            result += "    Id : " + e.getId() + "\n";
+            result += "    Sexe : " + e.getSex() + "\n";
+            result += "    Date de naissance : " + e.getDob() + "\n";
         }
         return result;
     }
