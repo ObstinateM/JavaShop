@@ -1,9 +1,13 @@
 package view;
 
-import java.awt.*;
-import javax.swing.*;
-
-import controller.*;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import controller.CloseAndOpenMain;
 import model.Shop;
 
 public class ListEmployeeWindow extends JFrame {

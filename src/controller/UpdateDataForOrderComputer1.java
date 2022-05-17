@@ -3,7 +3,6 @@ package controller;
 import model.Shop;
 import java.awt.event.*;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 public class UpdateDataForOrderComputer1 implements ActionListener {
@@ -11,8 +10,7 @@ public class UpdateDataForOrderComputer1 implements ActionListener {
     private JComboBox<String> comboBox;
     private JLabel totalPrice;
 
-    public UpdateDataForOrderComputer1(JComboBox<String> comboBox, JLabel totalPrice,
-            Shop shop) {
+    public UpdateDataForOrderComputer1(JComboBox<String> comboBox, JLabel totalPrice, Shop shop) {
         this.totalPrice = totalPrice;
         this.shop = shop;
         this.comboBox = comboBox;

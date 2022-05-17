@@ -165,7 +165,6 @@ public class Shop {
         return null;
     }
 
-    // get customer by Id
     public Customer getCustomerById(int id) {
         for (Customer customer : customerList) {
             if (customer.getId() == id) {
@@ -175,7 +174,6 @@ public class Shop {
         return null;
     }
 
-    // return Employe with by lastname
     public Employee getEmployeeByFirstName(String FirstName) {
 
         for (Employee e : employeeList) {
@@ -187,7 +185,6 @@ public class Shop {
         return null;
     }
 
-    // methode for Order
     public String getAllOrderAsString(OrderList orderList) {
         String result = "";
         for (Article order : orderList.getOrderList()) {
@@ -198,7 +195,6 @@ public class Shop {
         return result;
     }
 
-    // get listOrder
     public ArrayList<OrderList> getAllOrderList() {
         return this.orderList;
     }

@@ -1,10 +1,16 @@
 package view;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Font;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import controller.LoginController;
 import controller.OpenResetPassword;
-import model.*;
+import model.Shop;
 
 public class LoginExist extends JFrame {
 

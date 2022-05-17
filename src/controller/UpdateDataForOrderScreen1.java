@@ -10,8 +10,8 @@ public class UpdateDataForOrderScreen1 implements ActionListener {
     private JComboBox<String> comboBox;
     private JLabel totalPrice;
 
-    public UpdateDataForOrderScreen1(JComboBox<String> comboBox, JLabel totalPrice, Shop shop, JLabel width,
-            JLabel height, JLabel resfreshRate, JLabel responseTime) {
+    public UpdateDataForOrderScreen1(JComboBox<String> comboBox, JLabel totalPrice, Shop shop,
+            JLabel width, JLabel height, JLabel resfreshRate, JLabel responseTime) {
         this.totalPrice = totalPrice;
         this.shop = shop;
         this.comboBox = comboBox;

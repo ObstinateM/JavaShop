@@ -47,19 +47,17 @@ public class NewOrder extends JFrame {
         btnAddKeyboard.setBounds(100, 280, 117, 30);
         btnAddKeyboard.addActionListener(new CloseAndOpenNewOrderKeyboard(this, shop, orderlist));
         contentPane.add(btnAddKeyboard);
-        // label for list artcle order
+
         JLabel lblListArticle = new JLabel("Liste des articles commandé");
         lblListArticle.setBounds(300, 50, 200, 16);
         contentPane.add(lblListArticle);
 
-        // list of articles to order
         JTextPane textAreaEmployee = new JTextPane();
         textAreaEmployee.setEditable(false);
         textAreaEmployee.setText(shop.getAllOrderAsString(orderlist));
         textAreaEmployee.setBounds(300, 80, 350, 350);
         contentPane.add(textAreaEmployee);
-        // Back au menu principal
-        // button
+
         JButton btnValidate = new JButton("Valider");
         btnValidate.setBounds(63, 400, 100, 25);
         btnValidate.setBackground(Color.decode("#AAFF00"));
