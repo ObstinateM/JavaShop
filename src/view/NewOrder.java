@@ -2,7 +2,9 @@ package view;
 
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
@@ -14,10 +16,13 @@ import controller.CloseAndOpenMainWithNewOrder;
 import controller.CloseAndOpenNewOrderComputer;
 import controller.CloseAndOpenNewOrderKeyboard;
 import controller.CloseAndOpenNewOrderScreen;
+import controller.SetCustomerIdForOrder;
+
 import model.Shop;
 
 public class NewOrder extends JFrame {
     private JPanel contentPane;
+    private JComboBox<String> idClient;
 
     public NewOrder(Shop shop, OrderList orderlist) {
         setTitle("Nouvelle Commande");
@@ -58,6 +63,16 @@ public class NewOrder extends JFrame {
         textAreaEmployee.setBounds(300, 80, 350, 350);
         contentPane.add(textAreaEmployee);
 
+        idClient = new JComboBox<String>();
+        idClient.setBounds(300, 500, 200, 30);
+        DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>();
+        for (int i = 0; i < shop.getCustomerList().size(); i++) {
+            model.addElement(
+                    shop.getCustomerList().get(i).getFirstName() + " " + shop.getCustomerList().get(i).getLastName());
+        }
+        idClient.setModel(model);
+        contentPane.add(idClient);
+        idClient.doLayout();
         JButton btnValidate = new JButton("Valider");
         btnValidate.setBounds(63, 400, 100, 25);
         btnValidate.setBackground(Color.decode("#AAFF00"));
@@ -69,5 +84,7 @@ public class NewOrder extends JFrame {
         btnCancel.setBackground(Color.decode("#C70039"));
         contentPane.add(btnCancel);
         btnCancel.addActionListener(new CloseAndOpenMain(this, shop));
+
+        idClient.addActionListener(new SetCustomerIdForOrder(shop, idClient, orderlist));
     }
 }
