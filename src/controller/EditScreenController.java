@@ -52,7 +52,7 @@ public class EditScreenController implements ActionListener {
             return;
         }
 
-        if (!Regex.validateNumber(tfPrice.getText())) {
+        if (!Regex.validateDouble(tfPrice.getText())) {
             JOptionPane.showMessageDialog(null, "Veuillez entrer un prix valide", "Erreur",
                     JOptionPane.ERROR_MESSAGE);
             return;

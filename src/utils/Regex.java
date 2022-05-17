@@ -16,4 +16,8 @@ public class Regex {
     public static boolean validateLettersAndNumbers(String s) {
         return s.matches("^[a-zA-Z0-9 ]+$");
     }
+
+    public static boolean validateDouble(String number) {
+        return number.matches("^[0-9]+(\\.[0-9]{1,2})?$");
+    }
 }
