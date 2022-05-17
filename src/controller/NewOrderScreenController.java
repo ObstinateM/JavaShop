@@ -43,8 +43,11 @@ public class NewOrderScreenController implements ActionListener {
                 comboBox.getSelectedItem().toString(),
                 Double.parseDouble(totalPrice.getText().replace(" ", "").replace("€", "")),
                 numberOf.getSelectedIndex(), numberOf.getSelectedIndex(),
-                Integer.parseInt(width.getText()), Integer.parseInt(height.getText()),
-                Integer.parseInt(refreshRate.getText()), Integer.parseInt(responeTime.getText()));
+                Integer.parseInt(this.width.getText().split(" ")[2]),
+                Integer.parseInt(this.height.getText().split(" ")[2]),
+                Integer.parseInt(this.refreshRate.getText().split(" ")[2]),
+                Integer.parseInt(this.responeTime.getText().split(" ")[2]));
+
         this.orderList.addOrder(keyboard);
         frame.dispose();
         new NewOrder(shop, orderList);

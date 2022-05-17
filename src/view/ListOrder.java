@@ -7,16 +7,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
+
 import controller.CloseAndOpenMain;
 import model.Shop;
 
-public class ListEmployeeWindow extends JFrame {
-
+public class ListOrder extends JFrame {
     private static final long serialVersionUID = 1L;
 
     private JPanel p = new JPanel();
 
-    public ListEmployeeWindow(Shop s) {
+    public ListOrder(Shop s) {
         setTitle("Vos employes");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         p.setLayout(null);
@@ -26,14 +26,14 @@ public class ListEmployeeWindow extends JFrame {
         setResizable(false);
         setVisible(true);
 
-        JLabel labelWelcome1 = new JLabel("Voici la liste de tout vos employes : ");
+        JLabel labelWelcome1 = new JLabel("Voici la liste de toutes les commandes : ");
         labelWelcome1.setFont(new Font("Verdana", Font.PLAIN, 18));
         labelWelcome1.setBounds(0, 12, 500, 25);
         p.add(labelWelcome1);
 
         JTextPane textAreaEmployee = new JTextPane();
         textAreaEmployee.setEditable(false);
-        textAreaEmployee.setText(s.getAllEmployeeAsString());
+        textAreaEmployee.setText(s.getOrderListAsString());
         textAreaEmployee.setBounds(0, 50, 700, 200);
         p.add(textAreaEmployee);
 

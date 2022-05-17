@@ -185,6 +185,42 @@ public class Shop {
         return null;
     }
 
+    public String getOrderListAsString() {
+        int ctn = 1;
+        String result = "";
+        for (OrderList orderlist : orderList) {
+            // add id start at 0
+            result += " N° : " + ctn + "\n";
+            for (Article order : orderlist.getOrderList()) {
+                for (Computer computer : computerList) {
+                    if (computer.getName().equals(order.getName())) {
+                        result += "    " + computer.getName() + " | "
+                                + "Prix total : "
+                                + String.format("%.02f", computer.getPrice() * computer.getNumberOfSell())
+                                + " € " + " | " + computer.getInventory() + " en stocks" + "\n";
+                    }
+                }
+                for (Keyboard keyboard : keyboardList) {
+                    if (keyboard.getName().equals(order.getName())) {
+                        result += "    " + keyboard.getName() + " | "
+                                + "Prix total : "
+                                + String.format("%.02f", keyboard.getPrice() * keyboard.getNumberOfSell())
+                                + " € " + " | " + keyboard.getInventory() + " en stocks" + "\n";
+                    }
+                }
+                for (Screen screen : screenList) {
+                    if (screen.getName().equals(order.getName())) {
+                        result += "    " + screen.getName() + " | "
+                                + "Prix total : " + String.format("%.02f", screen.getPrice() * screen.getNumberOfSell())
+                                + " € " + " | " + screen.getInventory() + " en stocks" + "\n";
+                    }
+                }
+            }
+
+        }
+        return result;
+    }
+
     public String getAllOrderAsString(OrderList orderList) {
         String result = "";
         for (Article order : orderList.getOrderList()) {
