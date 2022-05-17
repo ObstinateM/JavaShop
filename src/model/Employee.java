@@ -15,15 +15,4 @@ public class Employee extends Person {
     public void setStatus(String status) {
         this.status = status;
     }
-
-    @Override
-    public int getId() {
-        return this.id;
-    }
-
-    @Override
-    public void setId(int id) {
-        this.id = id;
-    }
-
 }

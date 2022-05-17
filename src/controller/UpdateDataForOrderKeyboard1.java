@@ -10,8 +10,7 @@ public class UpdateDataForOrderKeyboard1 implements ActionListener {
     private JComboBox<String> comboBox;
     private JLabel totalPrice;
 
-    public UpdateDataForOrderKeyboard1(JComboBox<String> comboBox, JLabel totalPrice,
-            Shop shop) {
+    public UpdateDataForOrderKeyboard1(JComboBox<String> comboBox, JLabel totalPrice, Shop shop) {
         this.totalPrice = totalPrice;
         this.shop = shop;
         this.comboBox = comboBox;

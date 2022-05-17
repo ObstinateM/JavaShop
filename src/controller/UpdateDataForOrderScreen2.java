@@ -12,9 +12,8 @@ public class UpdateDataForOrderScreen2 implements ActionListener {
     private JLabel totalPrice;
     private JLabel unityPrice;
 
-    public UpdateDataForOrderScreen2(JComboBox<Integer> numberOf, JComboBox<String> comboBox, JLabel totalPrice,
-            JLabel unityPrice,
-            Shop shop) {
+    public UpdateDataForOrderScreen2(JComboBox<Integer> numberOf, JComboBox<String> comboBox,
+            JLabel totalPrice, JLabel unityPrice, Shop shop) {
         this.numberOf = numberOf;
         this.totalPrice = totalPrice;
         this.unityPrice = unityPrice;
@@ -26,13 +25,13 @@ public class UpdateDataForOrderScreen2 implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JComboBox<String> cb = (JComboBox<String>) e.getSource();
 
-        totalPrice.setText(""
-                + (numberOf.getSelectedIndex() + 1)
-                        * shop.getKeyboardList().get(comboBox.getSelectedIndex()).getPrice()
-                + "€");
-        unityPrice.setText(
-                "Prix par article : " +
-                        shop.getKeyboardList().get(cb.getSelectedIndex()).getPrice() + "€");
+        totalPrice
+                .setText(""
+                        + (numberOf.getSelectedIndex() + 1)
+                                * shop.getKeyboardList().get(comboBox.getSelectedIndex()).getPrice()
+                        + "€");
+        unityPrice.setText("Prix par article : "
+                + shop.getKeyboardList().get(cb.getSelectedIndex()).getPrice() + "€");
 
     }
 
