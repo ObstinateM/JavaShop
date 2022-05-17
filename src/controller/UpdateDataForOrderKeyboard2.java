@@ -1,34 +1,24 @@
 package controller;
 
-import view.*;
-import model.Computer;
 import model.Shop;
-import view.MainInterface;
+
 import java.awt.event.*;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 public class UpdateDataForOrderKeyboard2 implements ActionListener {
         private Shop shop;
-        private JFrame frame;
-        private JComboBox numberOf;
-        private JComboBox comboBox;
-        private JTextField orderName;
+        private JComboBox<Integer> numberOf;
+        private JComboBox<String> comboBox;
         private JLabel totalPrice;
         private JLabel unityPrice;
 
-        public UpdateDataForOrderKeyboard2(JComboBox numberOf, JComboBox<String> comboBox,
-                        JLabel totalPrice, JLabel unityPrice,
-                        JFrame frame, Shop shop) {
+        public UpdateDataForOrderKeyboard2(JComboBox<Integer> numberOf, JComboBox<String> comboBox,
+                        JLabel totalPrice, JLabel unityPrice, Shop shop) {
                 this.numberOf = numberOf;
-                this.orderName = orderName;
                 this.totalPrice = totalPrice;
                 this.unityPrice = unityPrice;
                 this.shop = shop;
-                this.frame = frame;
                 this.comboBox = comboBox;
         }
 

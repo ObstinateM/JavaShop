@@ -2,13 +2,15 @@ package view;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
-
-import controller.*;
+import controller.UpdateDataForOrderKeyboard1;
+import controller.UpdateDataForOrderKeyboard2;
+import controller.NewOrderKeyboardController;
+import controller.CloseAndOpenMain;
 import model.OrderList;
 import model.Shop;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -18,11 +20,8 @@ import java.awt.*;
 public class NewOrderKeyboard extends JFrame {
 
     private JPanel contentPane;
-    private JTextField idClient;
-    private JTextField orderName;
-    private JComboBox<String> comboIdClient;
     private JComboBox<String> comboBox;
-    private JComboBox comboBoxNumber;
+    private JComboBox<Integer> comboBoxNumber;
     private JCheckBox isMechanical;
     private JCheckBox isRGB;
     private JCheckBox isWireless;
@@ -32,7 +31,7 @@ public class NewOrderKeyboard extends JFrame {
     public NewOrderKeyboard(Shop shop, OrderList orderList) {
         setVisible(true);
         setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(500, 500, 250, 550);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -88,9 +87,9 @@ public class NewOrderKeyboard extends JFrame {
         contentPane.add(hasKeypad);
         comboBoxNumber
                 .addActionListener(
-                        new UpdateDataForOrderKeyboard1(comboBoxNumber, comboBox, totalPrice, this, shop));
+                        new UpdateDataForOrderKeyboard1(comboBox, totalPrice, shop));
         comboBox.addActionListener(
-                new UpdateDataForOrderKeyboard2(comboBoxNumber, comboBox, totalPrice, lblUnityPrice, this, shop));
+                new UpdateDataForOrderKeyboard2(comboBoxNumber, comboBox, totalPrice, lblUnityPrice, shop));
         btnValidate.addActionListener(new NewOrderKeyboardController(comboBox, comboBoxNumber, totalPrice, this, shop,
                 orderList, isMechanical, isRGB, isWireless, hasKeypad));
 

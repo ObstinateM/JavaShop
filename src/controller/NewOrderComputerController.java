@@ -14,14 +14,14 @@ public class NewOrderComputerController implements ActionListener {
     private Shop shop;
     private JFrame frame;
     private JComboBox<String> comboBox;
-    private JComboBox numberOf;
+    private JComboBox<Integer> numberOf;
     private JLabel totalPrice;
     private OrderList orderList;
     private JLabel proc;
     private JLabel ram;
     private JLabel hdd;
 
-    public NewOrderComputerController(JComboBox<String> comboBox, JComboBox numberOf,
+    public NewOrderComputerController(JComboBox<String> comboBox, JComboBox<Integer> numberOf,
             JLabel totalPrice2, JFrame frame, Shop shop, OrderList orderlist, JLabel proc, JLabel ram, JLabel hdd) {
         this.comboBox = comboBox;
         this.numberOf = numberOf;
@@ -36,6 +36,7 @@ public class NewOrderComputerController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+
         Computer computer = new Computer((int) (Math.random() * 900) + 100, comboBox.getSelectedItem().toString(),
                 Double.parseDouble(totalPrice.getText().replace(" ", "").replace("€", "")), numberOf.getSelectedIndex(),
                 numberOf.getSelectedIndex(),

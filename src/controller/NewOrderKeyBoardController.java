@@ -15,7 +15,7 @@ public class NewOrderKeyboardController implements ActionListener {
     private Shop shop;
     private JFrame frame;
     private JComboBox<String> comboBox;
-    private JComboBox numberOf;
+    private JComboBox<Integer> numberOf;
     private JLabel totalPrice;
     private OrderList orderList;
     private JCheckBox isMechanical;
@@ -23,7 +23,7 @@ public class NewOrderKeyboardController implements ActionListener {
     private JCheckBox isWireless;
     private JCheckBox hasKeypad;
 
-    public NewOrderKeyboardController(JComboBox<String> comboBox, JComboBox numberOf,
+    public NewOrderKeyboardController(JComboBox<String> comboBox, JComboBox<Integer> numberOf,
             JLabel totalPrice2, JFrame frame, Shop shop, OrderList orderlist, JCheckBox isMechanical, JCheckBox isRGB,
             JCheckBox isWireless, JCheckBox hasKeypad) {
         this.comboBox = comboBox;

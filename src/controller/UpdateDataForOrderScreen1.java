@@ -1,34 +1,20 @@
 package controller;
 
-import view.*;
-import model.Screen;
 import model.Shop;
-import view.MainInterface;
 import java.awt.event.*;
 import javax.swing.JComboBox;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 
 public class UpdateDataForOrderScreen1 implements ActionListener {
     private Shop shop;
-    private JFrame frame;
-    private JComboBox numberOf;
-    private JComboBox comboBox;
-    private JTextField orderName;
+    private JComboBox<String> comboBox;
     private JLabel totalPrice;
 
-    public UpdateDataForOrderScreen1(JComboBox numberOf, JComboBox<String> comboBox, JLabel totalPrice, JFrame frame,
-            Shop shop, JLabel width, JLabel height,
-            JLabel resfreshRate, JLabel responseTime) {
-        this.numberOf = numberOf;
-        this.orderName = orderName;
+    public UpdateDataForOrderScreen1(JComboBox<String> comboBox, JLabel totalPrice, Shop shop, JLabel width,
+            JLabel height, JLabel resfreshRate, JLabel responseTime) {
         this.totalPrice = totalPrice;
         this.shop = shop;
-        this.frame = frame;
         this.comboBox = comboBox;
-
     }
 
     @Override
