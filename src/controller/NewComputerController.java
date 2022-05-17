@@ -48,7 +48,7 @@ public class NewComputerController implements ActionListener {
             return;
         }
 
-        if (!Regex.validateNumber(tdPrice.getText())) {
+        if (!Regex.validateDouble(tdPrice.getText())) {
             JOptionPane.showMessageDialog(null, "Veuillez entrer un prix valide", "Erreur",
                     JOptionPane.ERROR_MESSAGE);
             return;
