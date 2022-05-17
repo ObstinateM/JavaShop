@@ -52,12 +52,12 @@ public class MainInterface extends JFrame {
 
         JLabel labelShop = new JLabel("Nom du magasin : " + s.getName());
         labelShop.setFont(new Font("Verdana", Font.PLAIN, 20));
-        labelShop.setBounds(10, -3, 300, 50);
+        labelShop.setBounds(10, -3, 685, 50);
         header.add(labelShop);
 
         JLabel labelAddress = new JLabel("Adresse : " + s.getAddress());
         labelAddress.setFont(new Font("Verdana", Font.PLAIN, 15));
-        labelAddress.setBounds(10, 15, 300, 50);
+        labelAddress.setBounds(10, 15, 685, 50);
         header.add(labelAddress);
 
         // RIGHT SIDE //

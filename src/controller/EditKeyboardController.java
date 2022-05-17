@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import model.Keyboard;
 import model.Shop;
+import utils.Regex;
 import view.MainInterface;
 import java.awt.event.ActionEvent;
 
@@ -38,6 +39,24 @@ public class EditKeyboardController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if (tfName.getText().isEmpty() || tfPrice.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Veuillez remplir tous les champs", "Erreur",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!Regex.validateLettersAndNumbers(tfName.getText())) {
+            JOptionPane.showMessageDialog(null, "Veuillez entrer un nom valide", "Erreur",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (!Regex.validateNumber(tfPrice.getText())) {
+            JOptionPane.showMessageDialog(null, "Veuillez entrer un prix valide", "Erreur",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         try {
             keyboard.setName(tfName.getText());
             keyboard.setPrice(Double.parseDouble(tfPrice.getText()));

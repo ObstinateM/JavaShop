@@ -37,7 +37,6 @@ public class NewOrderComputerController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
         Computer computer = new Computer((int) (Math.random() * 900) + 100,
                 comboBox.getSelectedItem().toString(),
                 Double.parseDouble(totalPrice.getText().replace(" ", "").replace("€", "")),
