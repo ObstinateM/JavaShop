@@ -8,16 +8,13 @@ public class Order {
     private String orderName;
     private double totalPrice;
     private int numberOfItems;
-    private ArrayList<Article> articlesList = new ArrayList<Article>();
 
-    public Order(int id, int idClient, int number, String orderName, double totalPrice,
-            ArrayList<Article> articlesList) {
+    public Order(int id, int idClient, int number, String orderName, double totalPrice) {
         this.id = id;
         this.idClient = idClient;
         this.numberOfItems = number;
         this.orderName = orderName;
         this.totalPrice = totalPrice;
-        this.articlesList = articlesList;
     }
 
     public int getId() {
@@ -52,16 +49,8 @@ public class Order {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
-    }
-
-    public ArrayList<Article> getArticlesList() {
-        return articlesList;
-    }
-
-    public void addArticle(Article article) {
-        this.articlesList.add(article);
     }
 
 }

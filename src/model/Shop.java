@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Component;
+import java.awt.Container;
 import java.util.ArrayList;
 
 public class Shop {
@@ -11,8 +13,8 @@ public class Shop {
     private ArrayList<Keyboard> keyboardList = new ArrayList<Keyboard>();
     private ArrayList<Screen> screenList = new ArrayList<Screen>();
     private ArrayList<Employee> employeeList = new ArrayList<Employee>();
-    private ArrayList<Order> orderList = new ArrayList<Order>();
     private ArrayList<Customer> customerList = new ArrayList<Customer>();
+    private ArrayList<OrderList> orderList = new ArrayList<OrderList>();
 
     public Shop(String name, String password, String address) {
         this.address = address;
@@ -82,10 +84,6 @@ public class Shop {
         return this.employeeList;
     }
 
-    public ArrayList<Order> getOrderList() {
-        return this.orderList;
-    }
-
     public ArrayList<Customer> getCustomerList() {
         return this.customerList;
     }
@@ -129,7 +127,6 @@ public class Shop {
             result += "    Id : " + e.getId() + "\n";
             result += "    Sexe : " + e.getSex() + "\n";
             result += "    Date de naissance : " + e.getDob() + "\n";
-            result += "    Statut : " + e.getStatus() + "\n\n";
         }
         return result;
     }
@@ -170,23 +167,86 @@ public class Shop {
         return null;
     }
 
-    public Employee getEmployeeByFirstName(String FirstName) {
-        for (Employee e : employeeList) {
-            if (e.getFirstName().equals(FirstName)) {
-                return e;
+    // get customer by Id
+    public Customer getCustomerById(int id) {
+        for (Customer customer : customerList) {
+            if (customer.getId() == id) {
+                return customer;
             }
         }
         return null;
     }
 
-    public String getAllOrdersAsString() {
-        String result = "";
-        for (Order o : orderList) {
-            for (Article a : o.getArticlesList()) {
-                result += "Name :" + o.getOrderName() + " - " + o.getId() + " :\n" + "    "
-                        + a.getName() + " - " + a.getPrice() + "€ - " + o.getQuantity() + "\n";
+    // return Employe with by lastname
+    public Employee getEmployeeByFirstName(String FirstName) {
+
+        for (Employee e : employeeList) {
+            if (e.getFirstName().equals(FirstName)) {
+                return e;
             }
+        }
+
+        return null;
+    }
+
+    // methode for Order
+    public String getAllOrderAsString(OrderList orderList) {
+        String result = "";
+        for (Article order : orderList.getOrderList()) {
+            result += "Nom : " + order.getName() + " | " + "Quantité : " + order.getNumberOfSell()
+                    + " | " + "Prix : " + String.format("%.02f", order.getPrice()) + " €" + "\n";
+
         }
         return result;
     }
+
+    // get listOrder
+    public ArrayList<OrderList> getAllOrderList() {
+        return this.orderList;
+    }
+
+    public void addOrderList(OrderList orderList) {
+        this.orderList.add(orderList);
+    }
+
+    public void addComputer(Computer computer) {
+        computerList.add(computer);
+    }
+
+    public void addKeyboard(Keyboard keyboard) {
+        keyboardList.add(keyboard);
+    }
+
+    public void addScreen(Screen screen) {
+        screenList.add(screen);
+    }
+
+    public void addCustomer(Customer customer) {
+        customerList.add(customer);
+    }
+
+    public void addEmployee(Employee employee) {
+        employeeList.add(employee);
+    }
+
+    public void removeComputer(Computer computer) {
+        computerList.remove(computer);
+    }
+
+    public void removeKeyboard(Keyboard keyboard) {
+        keyboardList.remove(keyboard);
+    }
+
+    public void removeScreen(Screen screen) {
+        screenList.remove(screen);
+    }
+
+    public void removeCustomer(Customer customer) {
+        customerList.remove(customer);
+    }
+
+    public void removeEmployee(Employee employee) {
+        employeeList.remove(employee);
+    }
+
 }

@@ -52,4 +52,5 @@ public class Customer extends Person {
     public int getNumberOfDiscountAvailable() {
         return this.numberOfDiscountAvailable;
     }
+
 }
