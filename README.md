@@ -2,14 +2,7 @@
 
 Logiciel de gestion d'un magasin de vente d'article informatique.
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
-## Features
-
--   Light/dark mode toggle
--   Live previews
--   Fullscreen mode
--   Cross platform
+![App Screenshot](https://cdn.discordapp.com/attachments/975014605510291506/976127882353057922/unknown.png)
 
 ## Authors
 
