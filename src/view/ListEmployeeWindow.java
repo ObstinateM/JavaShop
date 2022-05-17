@@ -6,7 +6,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
+import javax.swing.ScrollPaneConstants;
 import controller.CloseAndOpenMain;
 import model.Shop;
 
@@ -34,8 +36,14 @@ public class ListEmployeeWindow extends JFrame {
         JTextPane textAreaEmployee = new JTextPane();
         textAreaEmployee.setEditable(false);
         textAreaEmployee.setText(s.getAllEmployeeAsString());
-        textAreaEmployee.setBounds(0, 50, 700, 200);
+        textAreaEmployee.setHighlighter(null);
         p.add(textAreaEmployee);
+
+
+        JScrollPane scrollPane = new JScrollPane(textAreaEmployee);
+        scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setBounds(0, 50, 700, 200);
+        p.add(scrollPane);
 
         JButton btnBack = new JButton("Retour");
         btnBack.setBounds(10, 300, 100, 30);
