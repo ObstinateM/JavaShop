@@ -22,7 +22,7 @@ public class NewOrderComputer extends JFrame {
     private JPanel contentPane;
     private JComboBox<String> comboBox;
     private JComboBox<String> comboBoxNumber;
-    String[] s1 = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20"};
+    String[] s1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
     public NewOrderComputer(Shop shop, OrderList orderList) {
         setVisible(true);

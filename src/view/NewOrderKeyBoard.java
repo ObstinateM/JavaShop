@@ -25,7 +25,7 @@ public class NewOrderKeyboard extends JFrame {
     private JLabel isRGB;
     private JLabel isWireless;
     private JLabel hasKeypad;
-    String[] s1 = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20"};
+    String[] s1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
     public NewOrderKeyboard(Shop shop, OrderList orderList) {
         setVisible(true);

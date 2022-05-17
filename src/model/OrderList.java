@@ -29,4 +29,36 @@ public class OrderList {
     public int getIdClient() {
         return idClient;
     }
+
+    public ArrayList<Computer> getComputerList() {
+        ArrayList<Computer> computerList = new ArrayList<Computer>();
+        for (Article order : orderList) {
+            if (order instanceof Computer) {
+                computerList.add((Computer) order);
+
+            }
+
+        }
+        return computerList;
+    }
+
+    public ArrayList<Keyboard> getKeyboardList() {
+        ArrayList<Keyboard> keyboardList = new ArrayList<Keyboard>();
+        for (Article order : orderList) {
+            if (order instanceof Keyboard) {
+                keyboardList.add((Keyboard) order);
+            }
+        }
+        return keyboardList;
+    }
+
+    public ArrayList<Screen> getScreenList() {
+        ArrayList<Screen> screenList = new ArrayList<Screen>();
+        for (Article order : orderList) {
+            if (order instanceof Screen) {
+                screenList.add((Screen) order);
+            }
+        }
+        return screenList;
+    }
 }

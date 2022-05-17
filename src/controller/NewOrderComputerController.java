@@ -40,7 +40,7 @@ public class NewOrderComputerController implements ActionListener {
         Computer computer = new Computer((int) (Math.random() * 900) + 100,
                 comboBox.getSelectedItem().toString(),
                 Double.parseDouble(totalPrice.getText().replace(" ", "").replace("€", "")),
-                numberOf.getSelectedIndex(), numberOf.getSelectedIndex(), proc.getText(),
+                numberOf.getSelectedIndex() + 1, numberOf.getSelectedIndex() + 1, proc.getText(),
                 Integer.parseInt(this.ram.getText()), Integer.parseInt(this.hdd.getText()));
 
         this.orderList.addOrder(computer);
