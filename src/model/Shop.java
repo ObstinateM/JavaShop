@@ -100,7 +100,7 @@ public class Shop {
         for (Computer computer : computerList) {
             result += "    " + computer.getName() + " | "
                     + String.format("%.02f", computer.getPrice() * computer.getNumberOfSell())
-                    + " € de profit" + " | " + computer.getInventory() + " en stocks" + "\n";
+                    + " € de profit" + " | " + computer.getInventory() + " en stock" + "\n";
         }
 
         result += "\nClaviers :\n";
@@ -198,17 +198,19 @@ public class Shop {
         int ctn = 1;
         String result = "";
         for (OrderList orderlist : orderList) {
-            // add id start at 0
+
             result += " N° : " + ctn + "\n";
-            // display Id client for order
+            // display sell quantity
+
             result += " ID Client : " + orderlist.getIdClient() + "\n";
             for (Article order : orderlist.getOrderList()) {
+
                 for (Computer computer : computerList) {
                     if (computer.getName().equals(order.getName())) {
                         result += "    " + computer.getName() + " | "
                                 + "Prix total : "
                                 + String.format("%.02f", computer.getPrice() * computer.getNumberOfSell())
-                                + " € " + " | " + computer.getInventory() + " en stocks" + "\n";
+                                + " € " + " | " + computer.getInventory() + " commandé " + "\n";
                     }
                 }
                 for (Keyboard keyboard : keyboardList) {
@@ -216,14 +218,14 @@ public class Shop {
                         result += "    " + keyboard.getName() + " | "
                                 + "Prix total : "
                                 + String.format("%.02f", keyboard.getPrice() * keyboard.getNumberOfSell())
-                                + " € " + " | " + keyboard.getInventory() + " en stocks" + "\n";
+                                + " € " + " | " + keyboard.getInventory() + " commandé " + "\n";
                     }
                 }
                 for (Screen screen : screenList) {
                     if (screen.getName().equals(order.getName())) {
                         result += "    " + screen.getName() + " | "
                                 + "Prix total : " + String.format("%.02f", screen.getPrice() * screen.getNumberOfSell())
-                                + " € " + " | " + screen.getInventory() + " en stocks" + "\n";
+                                + " € " + " | " + screen.getInventory() + " commandé " + "\n";
                     }
                 }
             }

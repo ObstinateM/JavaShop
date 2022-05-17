@@ -2,8 +2,6 @@ package controller;
 
 import javax.swing.JComboBox;
 import java.awt.event.*;
-
-import model.Customer;
 import model.OrderList;
 import model.Shop;
 

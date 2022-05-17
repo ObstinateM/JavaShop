@@ -80,7 +80,6 @@ public class EditComputerController implements ActionListener {
             computer.setRamGB(Integer.parseInt(tfRam.getText()));
             computer.setHddGB(Integer.parseInt(tfHdd.getText()));
         } catch (Exception err) {
-            System.out.println(err.getMessage());
             JOptionPane.showMessageDialog(null, "Erreur de type");
         }
         frame.dispose();

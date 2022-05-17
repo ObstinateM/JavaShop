@@ -91,7 +91,6 @@ public class EditScreenController implements ActionListener {
             screen.setRefreshRate(Integer.parseInt(tfRefreshRate.getText()));
             screen.setResponseTime(Integer.parseInt(tfResponseTime.getText()));
         } catch (Exception err) {
-            System.out.println(err.getMessage());
             JOptionPane.showMessageDialog(null, "Erreur de type");
         }
         frame.dispose();

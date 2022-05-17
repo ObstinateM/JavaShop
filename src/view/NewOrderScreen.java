@@ -19,7 +19,7 @@ public class NewOrderScreen extends JFrame {
     private JComboBox<String> comboBox;
     private JComboBox<String> comboBoxNumber;
 
-    String[] s1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20" };
+    String[] s1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" };
 
     public NewOrderScreen(Shop shop, OrderList orderList) {
         setVisible(true);

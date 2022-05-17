@@ -65,7 +65,6 @@ public class EditKeyboardController implements ActionListener {
             keyboard.setWireless(cbWireless.isSelected());
             keyboard.setKeypad(cbKeypad.isSelected());
         } catch (Exception err) {
-            System.out.println(err.getMessage());
             JOptionPane.showMessageDialog(null, "Erreur de type");
         }
         frame.dispose();

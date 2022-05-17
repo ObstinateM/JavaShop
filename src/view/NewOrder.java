@@ -4,6 +4,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -73,6 +74,7 @@ public class NewOrder extends JFrame {
         idClient.setModel(model);
         contentPane.add(idClient);
         idClient.doLayout();
+
         JButton btnValidate = new JButton("Valider");
         btnValidate.setBounds(63, 400, 100, 25);
         btnValidate.setBackground(Color.decode("#AAFF00"));

@@ -42,7 +42,7 @@ public class NewOrderKeyboardController implements ActionListener {
         Keyboard keyboard = new Keyboard((int) (Math.random() * 900) + 100,
                 comboBox.getSelectedItem().toString(),
                 Double.parseDouble(totalPrice.getText().replace(" ", "").replace("€", "")),
-                numberOf.getSelectedIndex(), numberOf.getSelectedIndex(),
+                numberOf.getSelectedIndex() + 1, numberOf.getSelectedIndex() + 1,
                 this.isMechanical.getText().split("true")[0].equals("true") ? true : false,
                 this.isRGB.getText().split("true")[0].equals("true") ? true : false,
                 this.isWireless.getText().split("true")[0].equals("true") ? true : false,
