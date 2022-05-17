@@ -19,7 +19,7 @@ public class NewOrderScreen extends JFrame {
     private JComboBox<String> comboBox;
     private JComboBox<String> comboBoxNumber;
 
-    String[] s1 = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20"};
+    String[] s1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20" };
 
     public NewOrderScreen(Shop shop, OrderList orderList) {
         setVisible(true);
@@ -63,20 +63,20 @@ public class NewOrderScreen extends JFrame {
         contentPane.add(comboBox);
         comboBox.doLayout();
 
-        JLabel width = new JLabel("" + shop.getScreenList().get(0).getWidth());
-        width.setBounds(100, 120, 280, 120);
+        JLabel width = new JLabel("Largeur : " + shop.getScreenList().get(0).getWidth() + " cm");
+        width.setBounds(20, 120, 280, 120);
         contentPane.add(width);
 
-        JLabel height = new JLabel("" + shop.getScreenList().get(0).getHeight());
-        height.setBounds(100, 150, 280, 120);
+        JLabel height = new JLabel("Hauteur : " + shop.getScreenList().get(0).getHeight() + " cm");
+        height.setBounds(20, 150, 280, 120);
         contentPane.add(height);
 
-        JLabel refreshRate = new JLabel("" + shop.getScreenList().get(0).getRefreshRate());
-        refreshRate.setBounds(100, 180, 280, 120);
+        JLabel refreshRate = new JLabel("Hz : " + shop.getScreenList().get(0).getRefreshRate() + " hz");
+        refreshRate.setBounds(20, 180, 280, 120);
         contentPane.add(refreshRate);
 
-        JLabel responseTime = new JLabel("" + shop.getScreenList().get(0).getResponseTime());
-        responseTime.setBounds(100, 210, 280, 120);
+        JLabel responseTime = new JLabel("Temps de réponse : " + shop.getScreenList().get(0).getResponseTime() + " ms");
+        responseTime.setBounds(20, 210, 280, 120);
         contentPane.add(responseTime);
 
         JButton btnValidate = new JButton("Valider");
@@ -90,9 +90,9 @@ public class NewOrderScreen extends JFrame {
         contentPane.add(btnCancel);
         btnCancel.addActionListener(new CloseAndOpenMain(this, shop));
         comboBoxNumber
-                .addActionListener(new UpdateDataForOrderKeyboard1(comboBox, totalPrice, shop));
-        comboBox.addActionListener(new UpdateDataForOrderKeyboard2(comboBoxNumber, comboBox,
-                totalPrice, lblUnityPrice, shop));
+                .addActionListener(new UpdateDataForOrderScreen1(comboBox, totalPrice, shop));
+        comboBox.addActionListener(new UpdateDataForOrderScreen2(comboBoxNumber, comboBox,
+                totalPrice, lblUnityPrice, shop, width, height, refreshRate, responseTime));
         btnValidate.addActionListener(new NewOrderScreenController(comboBox, comboBoxNumber,
                 totalPrice, this, shop, orderList, width, height, refreshRate, responseTime));
     }

@@ -15,6 +15,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import controller.CloseAndOpenListEmployee;
+import controller.CloseAndOpenListOrder;
 import controller.CloseAndOpenNewArticle;
 import controller.CloseAndOpenNewCustomer;
 import controller.CloseAndOpenNewEmployeeWindow;
@@ -115,6 +116,12 @@ public class MainInterface extends JFrame {
         btnOrder.addActionListener(new CloseAndOpenNewOrder(this, s));
         btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
         rightSide.add(btnOrder);
+        // list order
+        JButton btnListOrder = new JButton("Liste commandes");
+        btnListOrder.setBounds(20, 370, 150, 20);
+        btnListOrder.addActionListener(new CloseAndOpenListOrder(this, s));
+        btnEmployee.setHorizontalAlignment(SwingConstants.CENTER);
+        rightSide.add(btnListOrder);
 
         // MIDLE //
 

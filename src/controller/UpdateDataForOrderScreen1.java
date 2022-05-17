@@ -10,8 +10,7 @@ public class UpdateDataForOrderScreen1 implements ActionListener {
     private JComboBox<String> comboBox;
     private JLabel totalPrice;
 
-    public UpdateDataForOrderScreen1(JComboBox<String> comboBox, JLabel totalPrice, Shop shop,
-            JLabel width, JLabel height, JLabel resfreshRate, JLabel responseTime) {
+    public UpdateDataForOrderScreen1(JComboBox<String> comboBox, JLabel totalPrice, Shop shop) {
         this.totalPrice = totalPrice;
         this.shop = shop;
         this.comboBox = comboBox;
@@ -24,6 +23,7 @@ public class UpdateDataForOrderScreen1 implements ActionListener {
         int value = Integer.parseInt(newSelection);
         totalPrice.setText(""
                 + value * shop.getScreenList().get(comboBox.getSelectedIndex()).getPrice() + "€");
+
     }
 
 }

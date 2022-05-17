@@ -22,11 +22,11 @@ public class NewOrderKeyboard extends JFrame {
     private JPanel contentPane;
     private JComboBox<String> comboBox;
     private JComboBox<String> comboBoxNumber;
-    private JCheckBox isMechanical;
-    private JCheckBox isRGB;
-    private JCheckBox isWireless;
-    private JCheckBox hasKeypad;
-    String[] s1 = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20"};
+    private JLabel isMechanical;
+    private JLabel isRGB;
+    private JLabel isWireless;
+    private JLabel hasKeypad;
+    String[] s1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20" };
 
     public NewOrderKeyboard(Shop shop, OrderList orderList) {
         setVisible(true);
@@ -81,25 +81,25 @@ public class NewOrderKeyboard extends JFrame {
         contentPane.add(btnCancel);
         btnCancel.addActionListener(new CloseAndOpenMain(this, shop));
 
-        isMechanical = new JCheckBox("Mecanique");
+        isMechanical = new JLabel("Mecanique : " + shop.getKeyboardList().get(0).isMechanical());
         isMechanical.setBounds(20, 240, 200, 20);
         contentPane.add(isMechanical);
 
-        isRGB = new JCheckBox("RGB");
+        isRGB = new JLabel("RGB : " + shop.getKeyboardList().get(0).isRGB());
         isRGB.setBounds(20, 260, 200, 20);
         contentPane.add(isRGB);
 
-        isWireless = new JCheckBox("Wireless");
+        isWireless = new JLabel("Wireless : " + shop.getKeyboardList().get(0).isWireless());
         isWireless.setBounds(20, 280, 200, 20);
         contentPane.add(isWireless);
 
-        hasKeypad = new JCheckBox("Keypad");
+        hasKeypad = new JLabel("Keypad : " + shop.getKeyboardList().get(0).hasKeypad());
         hasKeypad.setBounds(20, 300, 200, 20);
         contentPane.add(hasKeypad);
         comboBoxNumber
                 .addActionListener(new UpdateDataForOrderKeyboard1(comboBox, totalPrice, shop));
         comboBox.addActionListener(new UpdateDataForOrderKeyboard2(comboBoxNumber, comboBox,
-                totalPrice, lblUnityPrice, shop));
+                totalPrice, lblUnityPrice, shop, isMechanical, isRGB, isWireless, hasKeypad));
         btnValidate.addActionListener(new NewOrderKeyboardController(comboBox, comboBoxNumber,
                 totalPrice, this, shop, orderList, isMechanical, isRGB, isWireless, hasKeypad));
     }

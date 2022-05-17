@@ -16,5 +16,4 @@ public class OrderList {
     public ArrayList<Article> getOrderList() {
         return orderList;
     }
-
 }
