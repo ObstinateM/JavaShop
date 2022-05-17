@@ -13,7 +13,6 @@ import model.Shop;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import java.awt.*;
 
@@ -26,7 +25,7 @@ public class NewOrderKeyboard extends JFrame {
     private JLabel isRGB;
     private JLabel isWireless;
     private JLabel hasKeypad;
-    String[] s1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20" };
+    String[] s1 = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20"};
 
     public NewOrderKeyboard(Shop shop, OrderList orderList) {
         setVisible(true);

@@ -86,6 +86,15 @@ public class Shop {
         return this.customerList;
     }
 
+    public int getCustomerByFirstName(String firstName) {
+        for (int i = 0; i < customerList.size(); i++) {
+            if (customerList.get(i).getFirstName().equals(firstName)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public String getAllArticlesAsString() {
         String result = "Ordinateurs :\n";
         for (Computer computer : computerList) {
@@ -191,6 +200,8 @@ public class Shop {
         for (OrderList orderlist : orderList) {
             // add id start at 0
             result += " N° : " + ctn + "\n";
+            // display Id client for order
+            result += " ID Client : " + orderlist.getIdClient() + "\n";
             for (Article order : orderlist.getOrderList()) {
                 for (Computer computer : computerList) {
                     if (computer.getName().equals(order.getName())) {

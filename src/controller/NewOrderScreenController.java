@@ -46,7 +46,7 @@ public class NewOrderScreenController implements ActionListener {
                 Integer.parseInt(this.width.getText().split(" ")[2]),
                 Integer.parseInt(this.height.getText().split(" ")[2]),
                 Integer.parseInt(this.refreshRate.getText().split(" ")[2]),
-                Integer.parseInt(this.responeTime.getText().split(" ")[2]));
+                Integer.parseInt(this.responeTime.getText().split(" ")[4]));
 
         this.orderList.addOrder(keyboard);
         frame.dispose();
