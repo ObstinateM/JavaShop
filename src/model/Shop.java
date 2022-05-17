@@ -1,7 +1,5 @@
 package model;
 
-import java.awt.Component;
-import java.awt.Container;
 import java.util.ArrayList;
 
 public class Shop {
@@ -33,8 +31,8 @@ public class Shop {
         screenList.add(new Screen(0, "LG OLED 2018", 299.99, 18, 1, 15, 17, 60, 2));
         screenList.add(new Screen(1, "Samsung QLED 2017", 399.99, 17, 6, 15, 19, 144, 1));
 
-        customerList.add(new Customer("Arthur", "Couteau", "01/01/1990", "HOMME", 20201838));
-        customerList.add(new Customer("Mathis", "Beauville", "01/01/1990", "HOMME", 20200048));
+        customerList.add(new Customer("Arthur", "Couteau", "19/15/1990", "HOMME", 20201838));
+        customerList.add(new Customer("Mathis", "Beauville", "15/18/1990", "HOMME", 20200048));
         customerList.get(1).setFidelityPoint(100);
         customerList.add(new Customer("Jane", "Doe", "17/01/1990", "FEMME", 27));
 

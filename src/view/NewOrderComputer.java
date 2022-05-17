@@ -2,13 +2,13 @@ package view;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
 import controller.*;
 import model.OrderList;
 import model.Shop;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -17,17 +17,14 @@ import java.awt.*;
 public class NewOrderComputer extends JFrame {
 
     private JPanel contentPane;
-    private JTextField idClient;
-    private JTextField orderName;
-    private JComboBox<String> comboIdClient;
     private JComboBox<String> comboBox;
-    private JComboBox comboBoxNumber;
+    private JComboBox<Integer> comboBoxNumber;
     String[] s1 = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "20" };
 
     public NewOrderComputer(Shop shop, OrderList orderList) {
         setVisible(true);
         setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(500, 500, 250, 550);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -82,9 +79,9 @@ public class NewOrderComputer extends JFrame {
         btnCancel.addActionListener(new CloseAndOpenMain(this, shop));
         comboBoxNumber
                 .addActionListener(
-                        new UpdateDataForOrderComputer1(comboBoxNumber, comboBox, totalPrice, this, shop));
+                        new UpdateDataForOrderComputer1(comboBox, totalPrice, shop));
         comboBox.addActionListener(
-                new UpdateDataForOrderComputer2(comboBoxNumber, comboBox, totalPrice, lblUnityPrice, this, shop));
+                new UpdateDataForOrderComputer2(comboBoxNumber, comboBox, totalPrice, lblUnityPrice, shop));
 
     }
 

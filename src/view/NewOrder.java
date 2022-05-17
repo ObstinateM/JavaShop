@@ -6,13 +6,11 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import model.OrderList;
 import controller.CloseAndOpenMain;
 import controller.CloseAndOpenMainWithNewOrder;
-import controller.CloseAndOpenNewComputer;
-import controller.CloseAndOpenNewKeyboard;
-import controller.CloseAndOpenNewScreen;
 import controller.CloseAndOpenNewOrderComputer;
 import controller.CloseAndOpenNewOrderKeyboard;
 import controller.CloseAndOpenNewOrderScreen;
@@ -24,7 +22,7 @@ public class NewOrder extends JFrame {
     public NewOrder(Shop shop, OrderList orderlist) {
         setTitle("Nouvelle Commande");
         setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setBounds(400, 300, 700, 600);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
