@@ -55,7 +55,7 @@ public class EditComputerController implements ActionListener {
             return;
         }
 
-        if (!Regex.validateNumber(tfProc.getText())) {
+        if (!Regex.validateLettersAndNumbers(tfProc.getText())) {
             JOptionPane.showMessageDialog(null, "Veuillez entrer un processeur valide", "Erreur",
                     JOptionPane.ERROR_MESSAGE);
             return;

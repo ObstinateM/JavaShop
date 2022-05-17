@@ -200,36 +200,38 @@ public class Shop {
         for (OrderList orderlist : orderList) {
 
             result += " N° : " + ctn + "\n";
-            // display sell quantity
 
             result += " ID Client : " + orderlist.getIdClient() + "\n";
             for (Article order : orderlist.getOrderList()) {
 
                 for (Computer computer : computerList) {
                     if (computer.getName().equals(order.getName())) {
-                        result += "    " + computer.getName() + " | "
-                                + "Prix total : "
-                                + String.format("%.02f", computer.getPrice() * computer.getNumberOfSell())
-                                + " € " + " | " + computer.getInventory() + " commandé " + "\n";
+                        result += "    " + computer.getName() + " | " + "Prix total : "
+                                + String.format("%.02f",
+                                        computer.getPrice() * computer.getNumberOfSell())
+                                + " € " + " | " + computer.getInventory() + " commandé(s) au total "
+                                + "\n";
                     }
                 }
                 for (Keyboard keyboard : keyboardList) {
                     if (keyboard.getName().equals(order.getName())) {
-                        result += "    " + keyboard.getName() + " | "
-                                + "Prix total : "
-                                + String.format("%.02f", keyboard.getPrice() * keyboard.getNumberOfSell())
-                                + " € " + " | " + keyboard.getInventory() + " commandé " + "\n";
+                        result += "    " + keyboard.getName() + " | " + "Prix total : "
+                                + String.format("%.02f",
+                                        keyboard.getPrice() * keyboard.getNumberOfSell())
+                                + " € " + " | " + keyboard.getInventory() + " commandé(s) au total "
+                                + "\n";
                     }
                 }
                 for (Screen screen : screenList) {
                     if (screen.getName().equals(order.getName())) {
-                        result += "    " + screen.getName() + " | "
-                                + "Prix total : " + String.format("%.02f", screen.getPrice() * screen.getNumberOfSell())
-                                + " € " + " | " + screen.getInventory() + " commandé " + "\n";
+                        result += "    " + screen.getName() + " | " + "Prix total : "
+                                + String.format("%.02f",
+                                        screen.getPrice() * screen.getNumberOfSell())
+                                + " € " + " | " + screen.getInventory() + " commandé(s) au total "
+                                + "\n";
                     }
                 }
             }
-
         }
         return result;
     }

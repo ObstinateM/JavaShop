@@ -3,6 +3,7 @@ package view;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import controller.CloseAndOpenMain;
 import controller.EditComputerController;
 import model.Computer;
 import model.Shop;
@@ -79,6 +80,7 @@ public class EditComputer extends JFrame {
 
         JButton btnCancel = new JButton("Annuler");
         btnCancel.setBounds(6, 310, 117, 29);
+        btnCancel.addActionListener(new CloseAndOpenMain(this, shop));
         contentPane.add(btnCancel);
 
         JButton btnSubmit = new JButton("Valider");
